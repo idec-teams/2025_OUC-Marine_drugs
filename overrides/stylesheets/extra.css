@@ -170,3 +170,53 @@
     font-size: 0.9rem;
 }
 
+/* 导航栏优化 - 更大气的样式 */
+.md-header {
+    background: linear-gradient(90deg, #165DFF 0%, #0FC6C2 100%);
+    box-shadow: 0 4px 15px rgba(22, 93, 255, 0.3);  /* 增强阴影效果 */
+    height: 60px;  /* 增加导航栏高度 */
+}
+
+/* 调整logo位置使其垂直居中 */
+.md-header__button.md-logo {
+    margin: auto 0;
+}
+
+/* 导航链接样式优化 */
+.md-tabs {
+    background-color: var(--md-background-color);
+    border-bottom: 1px solid rgba(22, 93, 255, 0.2);
+    padding: 0 2rem;  /* 增加水平内边距 */
+}
+
+.md-tabs__link {
+    color: var(--md-primary-fg-color--dark);
+    font-size: 0.95rem;  /* 增大字体 */
+    padding: 0.8rem 1.2rem;  /* 增加点击区域 */
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* 活跃状态样式增强 */
+.md-tabs__link--active {
+    color: var(--md-primary-fg-color);
+    font-weight: 600;
+}
+
+.md-tabs__link--active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #165DFF, #0FC6C2);
+    border-radius: 3px 3px 0 0;
+}
+
+/* 悬停效果增强 */
+.md-tabs__link:hover {
+    color: var(--md-primary-fg-color);
+    background-color: rgba(22, 93, 255, 0.05);
+}
+

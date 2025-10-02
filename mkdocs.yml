@@ -14,6 +14,10 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.expand
+    - navigation.instant  # 新增：添加平滑过渡效果
+  font:  # 新增：调整字体使导航更大气
+    text: Roboto
+    code: Roboto Mono
 
 nav:
   - Home: index.md
@@ -22,6 +26,7 @@ nav:
   - Results: results.md
   - Materials & Methods: materials_and_methods.md
   - Conclusion: conclusion.md
+  - References: references.md  # 新增：References模块
   - Author Introduction: author_introduction.md
   - Documentation:
       - Experimental Protocols: documentation/protocols.md

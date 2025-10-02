@@ -12,9 +12,10 @@ theme:
     scheme: slate  # 深色模式增强科技感
 
   features:
-    - navigation.sections
-    - navigation.instant
-    - content.tabs.link
+    - navigation.top  # 启用顶部导航栏
+    - navigation.tabs  # 启用标签式导航
+    - navigation.tabs.sticky  # 导航栏滚动时保持固定
+    # 移除 navigation.sections 因为顶部导航不需要这个特性
 
 markdown_extensions:
   - footnotes

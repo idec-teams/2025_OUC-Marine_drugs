@@ -8,22 +8,21 @@ theme:
   palette:
     primary: blue
     accent: cyan
-    scheme: default  # 改为蓝白基调的浅色模式
+    scheme: default
   features:
     - navigation.top
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.expand  # 确保子菜单正常展开
+    - navigation.expand
 
-# 保持其他配置不变，重点修复导航结构
 nav:
-  - 首页: index.md
-  - 摘要: abstract.md
-  - 引言: introduction.md
-  - 结果: results.md
-  - 材料与方法: materials_and_methods.md
-  - 结论: conclusion.md
-  - 作者介绍: author_introduction.md
-  - 文档:
-      - 实验方案: documentation/protocols.md
-      - 实验记录: documentation/notebook.md
+  - Home: index.md
+  - Abstract: abstract.md
+  - Introduction: introduction.md
+  - Results: results.md
+  - Materials & Methods: materials_and_methods.md
+  - Conclusion: conclusion.md
+  - Author Introduction: author_introduction.md
+  - Documentation:
+      - Experimental Protocols: documentation/protocols.md
+      - Lab Notebook: documentation/notebook.md

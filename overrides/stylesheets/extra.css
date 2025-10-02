@@ -220,3 +220,23 @@
     background-color: rgba(22, 93, 255, 0.05);
 }
 
+/* 增强导航栏选中状态的突出显示效果 */
+.md-tabs__link--active {
+    color: var(--md-primary-fg-color);
+    font-weight: 700; /* 加重字体 */
+    background-color: rgba(255, 255, 255, 0.2); /* 增加背景色 */
+    border-radius: 4px 4px 0 0; /* 顶部圆角 */
+    transform: scale(1.05); /* 轻微放大效果 */
+}
+
+/* 增强悬停效果，与选中状态有区分 */
+.md-tabs__link:not(.md-tabs__link--active):hover {
+    color: var(--md-primary-fg-color--light);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px 4px 0 0;
+}
+
+/* 确保过渡效果平滑 */
+.md-tabs__link {
+    transition: all 0.3s ease-in-out;
+}

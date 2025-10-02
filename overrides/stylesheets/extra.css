@@ -22,30 +22,35 @@
 .md-header {
     background: linear-gradient(90deg, #165DFF 0%, #0FC6C2 100%);
     box-shadow: 0 2px 10px rgba(22, 93, 255, 0.2);
+    /* 增加头部高度以适应大logo */
+    height: 80px;
 }
 
-/* 放大Logo */
+/* 大幅放大Logo */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-    height: 3rem; /* 增大Logo尺寸 */
+    height: 5rem; /* 显著放大Logo尺寸 */
     width: auto;
+    margin: -15px 0; /* 调整位置以适应更大的Logo */
 }
 
-/* 导航栏标签样式调整 */
+/* 导航栏标签样式调整 - 确保居中 */
 .md-tabs {
     background-color: var(--md-background-color);
     border-bottom: 1px solid rgba(22, 93, 255, 0.15);
     display: flex;
-    justify-content: center; /* 导航模块居中显示 */
+    justify-content: center; /* 强制导航模块居中 */
+    padding: 0 1rem;
 }
 
-/* 放大导航模块字体 */
+/* 大幅放大导航模块字体 */
 .md-tabs__link {
     color: var(--md-primary-fg-color--dark);
     position: relative;
     transition: all 0.3s ease;
-    font-size: 1.1rem; /* 放大字体 */
-    padding: 0.8rem 1.2rem; /* 增加内边距 */
+    font-size: 1.5rem; /* 显著放大字体 */
+    padding: 0.8rem 1.5rem; /* 增加内边距以匹配大字体 */
+    white-space: nowrap; /* 防止文字换行 */
 }
 
 .md-tabs__link--active {
@@ -64,9 +69,9 @@
     border-radius: 3px 3px 0 0;
 }
 
-/* 鼠标悬停时放大导航模块 */
+/* 鼠标悬停时放大导航模块 - 更明显的效果 */
 .md-tabs__link:hover {
-    transform: scale(1.1); /* 放大效果 */
+    transform: scale(1.2); /* 更大的放大效果 */
     z-index: 10; /* 确保放大时不会被其他元素遮挡 */
 }
 

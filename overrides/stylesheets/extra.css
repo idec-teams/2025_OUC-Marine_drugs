@@ -241,61 +241,71 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* 顶部导航栏优化 */
+/* 顶部导航栏整体优化 */
+.md-header {
+    min-height: 64px; /* 控制导航栏整体高度，保持适中 */
+}
+
+/* 网站标题区域 */
 .md-header__topic {
-    font-size: 1.4rem; /* 网站标题适度增大 */
-    font-weight: 600; /* 略微加粗增强识别度 */
+    font-size: 1.3rem; /* 标题字体适中 */
+    font-weight: 500; /* 适中字重，不突兀 */
+    padding: 0 1rem; /* 标题两侧留白适中 */
+}
+
+/* 导航标签模块 */
+.md-tabs {
+    padding: 0 0.5rem; /* 导航栏整体左右留白 */
+}
+
+.md-tabs__list {
+    gap: 0.2rem; /* 标签之间的间距适中，避免拥挤 */
 }
 
 .md-tabs__link {
-    font-size: 1.15rem; /* 导航标签适当增大 */
-    padding: 0.9rem 1.4rem; /* 增加内边距提升点击体验 */
-    letter-spacing: 0.02em; /* 轻微增加字间距提升可读性 */
+    font-size: 1.1rem; /* 导航文字大小适中 */
+    padding: 0.9rem 1.2rem; /* 标签内边距，保证点击区域舒适 */
+    letter-spacing: 0.01em; /* 轻微字间距，提升可读性 */
+    border-radius: 4px; /* 轻微圆角，视觉更柔和 */
 }
 
-/* 页面标题显著增大 */
-.md-content h1 {
-    font-size: 2.6rem; /* 主标题明显增大 */
-    margin-bottom: 0.8rem;
+/* 鼠标悬停时的状态优化 */
+.md-tabs__link:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 悬停时轻微背景色，增强交互感 */
 }
 
-.md-content h2 {
-    font-size: 2.1rem; /* 二级标题增大 */
-    margin-top: 1.5rem;
-    margin-bottom: 0.7rem;
-}
-
-.md-content h3 {
-    font-size: 1.7rem; /* 三级标题增大 */
-    margin-top: 1.3rem;
-}
-
-/* 响应式适配 - 确保移动设备显示正常 */
+/* 响应式适配 - 小屏幕保持舒适 */
 @media (max-width: 76.1875em) {
+    .md-header {
+        min-height: 58px;
+    }
     .md-header__topic {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     .md-tabs__link {
         font-size: 1.05rem;
-        padding: 0.8rem 1.1rem;
-    }
-    .md-content h1 {
-        font-size: 2.3rem;
-    }
-    .md-content h2 {
-        font-size: 1.9rem;
-    }
-    .md-content h3 {
-        font-size: 1.5rem;
+        padding: 0.8rem 1rem;
     }
 }
 
-/* 小屏幕设备进一步适配 */
+/* 页面标题保持增大且层级清晰 */
+.md-content h1 {
+    font-size: 2.8rem; /* 主标题显著增大 */
+}
+
+.md-content h2 {
+    font-size: 2.2rem; /* 二级标题增大 */
+}
+
+.md-content h3 {
+    font-size: 1.8rem; /* 三级标题增大 */
+}
+
 @media (max-width: 45em) {
     .md-content h1 {
-        font-size: 2.0rem;
+        font-size: 2.4rem;
     }
     .md-content h2 {
-        font-size: 1.7rem;
+        font-size: 1.9rem;
     }
 }

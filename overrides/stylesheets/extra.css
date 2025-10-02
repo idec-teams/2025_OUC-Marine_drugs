@@ -24,15 +24,28 @@
     box-shadow: 0 2px 10px rgba(22, 93, 255, 0.2);
 }
 
+/* 放大Logo */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+    height: 3rem; /* 增大Logo尺寸 */
+    width: auto;
+}
+
+/* 导航栏标签样式调整 */
 .md-tabs {
     background-color: var(--md-background-color);
     border-bottom: 1px solid rgba(22, 93, 255, 0.15);
+    display: flex;
+    justify-content: center; /* 导航模块居中显示 */
 }
 
+/* 放大导航模块字体 */
 .md-tabs__link {
     color: var(--md-primary-fg-color--dark);
     position: relative;
     transition: all 0.3s ease;
+    font-size: 1.1rem; /* 放大字体 */
+    padding: 0.8rem 1.2rem; /* 增加内边距 */
 }
 
 .md-tabs__link--active {
@@ -49,6 +62,12 @@
     height: 3px;
     background: linear-gradient(90deg, #165DFF, #0FC6C2);
     border-radius: 3px 3px 0 0;
+}
+
+/* 鼠标悬停时放大导航模块 */
+.md-tabs__link:hover {
+    transform: scale(1.1); /* 放大效果 */
+    z-index: 10; /* 确保放大时不会被其他元素遮挡 */
 }
 
 /* 生化风格标题装饰 - 模拟DNA双螺旋/分子链 */
@@ -168,144 +187,4 @@
     justify-content: center;
     font-weight: bold;
     font-size: 0.9rem;
-}
-
-/* 导航栏优化 - 更大气的样式 */
-.md-header {
-    background: linear-gradient(90deg, #165DFF 0%, #0FC6C2 100%);
-    box-shadow: 0 4px 15px rgba(22, 93, 255, 0.3);  /* 增强阴影效果 */
-    height: 60px;  /* 增加导航栏高度 */
-}
-
-/* 调整logo位置使其垂直居中 */
-.md-header__button.md-logo {
-    margin: auto 0;
-}
-
-/* 导航链接样式优化 */
-.md-tabs {
-    background-color: var(--md-background-color);
-    border-bottom: 1px solid rgba(22, 93, 255, 0.2);
-    padding: 0 2rem;  /* 增加水平内边距 */
-}
-
-.md-tabs__link {
-    color: var(--md-primary-fg-color--dark);
-    font-size: 0.95rem;  /* 增大字体 */
-    padding: 0.8rem 1.2rem;  /* 增加点击区域 */
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-/* 活跃状态样式增强 */
-.md-tabs__link--active {
-    color: var(--md-primary-fg-color);
-    font-weight: 600;
-}
-
-.md-tabs__link--active::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(90deg, #165DFF, #0FC6C2);
-    border-radius: 3px 3px 0 0;
-}
-
-/* 悬停效果增强 */
-.md-tabs__link:hover {
-    color: var(--md-primary-fg-color);
-    background-color: rgba(22, 93, 255, 0.05);
-}
-
-/* 增强导航栏选中状态的突出显示效果 */
-.md-tabs__link--active {
-    color: var(--md-primary-fg-color);
-    font-weight: 700; /* 加重字体 */
-    background-color: rgba(255, 255, 255, 0.2); /* 增加背景色 */
-    border-radius: 4px 4px 0 0; /* 顶部圆角 */
-    transform: scale(1.05); /* 轻微放大效果 */
-}
-
-/* 增强悬停效果，与选中状态有区分 */
-.md-tabs__link:not(.md-tabs__link--active):hover {
-    color: var(--md-primary-fg-color--light);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px 4px 0 0;
-}
-
-/* 确保过渡效果平滑 */
-.md-tabs__link {
-    transition: all 0.3s ease-in-out;
-}
-
-/* 顶部导航栏整体优化 */
-.md-header {
-    min-height: 64px; /* 控制导航栏整体高度，保持适中 */
-}
-
-/* 网站标题区域 */
-.md-header__topic {
-    font-size: 1.3rem; /* 标题字体适中 */
-    font-weight: 500; /* 适中字重，不突兀 */
-    padding: 0 1rem; /* 标题两侧留白适中 */
-}
-
-/* 导航标签模块 */
-.md-tabs {
-    padding: 0 0.5rem; /* 导航栏整体左右留白 */
-}
-
-.md-tabs__list {
-    gap: 0.2rem; /* 标签之间的间距适中，避免拥挤 */
-}
-
-.md-tabs__link {
-    font-size: 1.1rem; /* 导航文字大小适中 */
-    padding: 0.9rem 1.2rem; /* 标签内边距，保证点击区域舒适 */
-    letter-spacing: 0.01em; /* 轻微字间距，提升可读性 */
-    border-radius: 4px; /* 轻微圆角，视觉更柔和 */
-}
-
-/* 鼠标悬停时的状态优化 */
-.md-tabs__link:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* 悬停时轻微背景色，增强交互感 */
-}
-
-/* 响应式适配 - 小屏幕保持舒适 */
-@media (max-width: 76.1875em) {
-    .md-header {
-        min-height: 58px;
-    }
-    .md-header__topic {
-        font-size: 1.2rem;
-    }
-    .md-tabs__link {
-        font-size: 1.05rem;
-        padding: 0.8rem 1rem;
-    }
-}
-
-/* 页面标题保持增大且层级清晰 */
-.md-content h1 {
-    font-size: 2.8rem; /* 主标题显著增大 */
-}
-
-.md-content h2 {
-    font-size: 2.2rem; /* 二级标题增大 */
-}
-
-.md-content h3 {
-    font-size: 1.8rem; /* 三级标题增大 */
-}
-
-@media (max-width: 45em) {
-    .md-content h1 {
-        font-size: 2.4rem;
-    }
-    .md-content h2 {
-        font-size: 1.9rem;
-    }
 }

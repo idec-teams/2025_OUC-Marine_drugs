@@ -54,5 +54,5 @@ we used alanine scanning, crude enzyme reaction activity screening to find
 variants with higher catalytic activities. Finally, the selected variants were 
 purified and their catalytic efficiencies were measured, in which F295A, P246A, 
 F176A, F292A, F82A, and Q88A showed 1.5-3.5-fold increased activity (Fig 1)
-<img src="img/Flow scheme of directed evolution of P450S18.png" alt="Figure 1 Flow scheme of directed evolution of P450<sub>S18</sub>." />
+<img src="img/1.png" alt="Figure 1 Flow scheme of directed evolution of P450<sub>S18</sub>" />
 </div>

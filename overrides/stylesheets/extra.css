@@ -1,196 +1,93 @@
 /* 基础色调配置 - 蓝白主调 */
 :root {
-    --md-primary-fg-color: #165DFF;       /* 主蓝色 */
-    --md-primary-fg-color--light: #4080FF; /* 浅蓝 */
-    --md-primary-fg-color--dark: #0E42D2;  /* 深蓝 */
-    --md-accent-fg-color: #0FC6C2;        /* 生化蓝绿色（酶/DNA双螺旋色） */
-    --md-background-color: #f0f7ff;       /* 淡蓝背景 */
-    --md-code-bg-color: #e6f0ff;          /* 代码块浅蓝色 */
-    --md-default-bg-color: #ffffff;       /* 白色内容区 */
+    --md-primary-fg-color: #0070f3;      /* 科技主蓝 */
+    --md-primary-fg-color--light: #4080FF;
+    --md-primary-fg-color--dark: #0f172a;  /* 深色底 */
+    --md-accent-fg-color: #00e0ff;       /* 化学荧光蓝 */
+    --md-background-color: #f8fafc;      /* 浅色背景 */
+    --accent-chem: #ff7a00;              /* 化学橙 */
+    --shadow: 0 4px 15px rgba(0, 112, 243, 0.2); /* 科技感阴影 */
+    --grid-pattern: linear-gradient(rgba(0, 112, 243, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 112, 243, 0.04) 1px, transparent 1px);
 }
 
-/* 生化科技感网格背景 - 模拟分子结构网格 */
-.md-content__inner {
-    background-image:
-            linear-gradient(rgba(22, 93, 255, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(22, 93, 255, 0.08) 1px, transparent 1px),
-            radial-gradient(circle, rgba(15, 198, 194, 0.1) 1px, transparent 1px);
-    background-size: 30px 30px, 30px 30px, 60px 60px;
-}
-
-/* 导航栏优化 - 修复点击问题并增强样式 */
+/* 更新导航栏样式 */
 .md-header {
-    background: linear-gradient(90deg, #165DFF 0%, #0FC6C2 100%);
-    box-shadow: 0 2px 10px rgba(22, 93, 255, 0.2);
-    /* 增加头部高度以适应大logo */
-    height: 80px;
+    background: linear-gradient(135deg, var(--md-primary-fg-color--dark), var(--md-primary-fg-color));
+    box-shadow: var(--shadow);
+    height: auto; /* 恢复自动高度 */
+    padding: 0.8rem 0;
 }
 
-/* 大幅放大Logo */
+/* 调整Logo样式 */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-    height: 5rem; /* 显著放大Logo尺寸 */
-    width: auto;
-    margin: -15px 0; /* 调整位置以适应更大的Logo */
+    height: 3rem; /* 适当调整Logo大小 */
+    margin: 0;
 }
 
-/* 导航栏标签样式调整 - 确保居中 */
+/* 导航栏标签样式 */
 .md-tabs {
-    background-color: var(--md-background-color);
-    border-bottom: 1px solid rgba(22, 93, 255, 0.15);
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-bottom: none;
     display: flex;
-    justify-content: center; /* 强制导航模块居中 */
-    padding: 0 1rem;
+    justify-content: center;
+    padding: 0.8rem 1rem;
 }
 
-/* 大幅放大导航模块字体 */
+/* 导航项样式 */
 .md-tabs__link {
     color: var(--md-primary-fg-color--dark);
-    position: relative;
+    padding: 0.7rem 1.4rem;
+    border-radius: 25px;
+    font-weight: 500;
     transition: all 0.3s ease;
-    font-size: 1.5rem; /* 显著放大字体 */
-    padding: 0.8rem 1.5rem; /* 增加内边距以匹配大字体 */
-    white-space: nowrap; /* 防止文字换行 */
+    border: 1px solid transparent;
+    font-size: 1rem; /* 调整字体大小 */
+    margin: 0 0.35rem;
 }
 
-.md-tabs__link--active {
-    color: var(--md-primary-fg-color);
-    font-weight: 600;
+.md-tabs__link:hover, .md-tabs__link--active {
+    background-color: var(--md-primary-fg-color);
+    color: white;
+    border-color: var(--md-accent-fg-color);
+    box-shadow: 0 3px 9px rgba(0, 112, 243, 0.25);
 }
 
 .md-tabs__link--active::after {
+    display: none; /* 移除原有的下划线 */
+}
+
+/* 内容区域网格背景 */
+.md-content__inner {
+    background-image: var(--grid-pattern);
+    background-size: 22px 22px;
+}
+
+/* 头部下方装饰线 */
+.md-header::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #165DFF, #0FC6C2);
-    border-radius: 3px 3px 0 0;
+    background: linear-gradient(90deg, var(--md-accent-fg-color), var(--accent-chem));
 }
 
-/* 鼠标悬停时放大导航模块 - 更明显的效果 */
-.md-tabs__link:hover {
-    transform: scale(1.2); /* 更大的放大效果 */
-    z-index: 10; /* 确保放大时不会被其他元素遮挡 */
-}
-
-/* 生化风格标题装饰 - 模拟DNA双螺旋/分子链 */
-.md-content h1, .md-content h2, .md-content h3 {
-    position: relative;
-    padding-bottom: 0.75rem;
-    background-image: linear-gradient(to right, var(--md-primary-fg-color), var(--md-accent-fg-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.md-content h1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, #165DFF, #0FC6C2);
-    border-radius: 2px;
-    /* 分子结构装饰 */
-    box-shadow:
-            20px 0 0 0 rgba(22, 93, 255, 0.6),
-            40px 0 0 0 rgba(22, 93, 255, 0.3),
-            60px 0 0 0 rgba(22, 93, 255, 0.1);
-}
-
-/* 内容区块样式 - 模拟培养皿/实验记录风格 */
+/* 模块内容样式调整 */
 .content {
-    background: rgba(255, 255, 255, 0.85);
-    border-left: 3px solid var(--md-accent-fg-color);
-    padding: 1.5rem;
-    border-radius: 6px;
-    margin: 1rem 0;
-    box-shadow: 0 4px 12px rgba(22, 93, 255, 0.08);
-    transition: all 0.3s ease;
-}
-
-.content:hover {
-    box-shadow: 0 6px 18px rgba(22, 93, 255, 0.12);
-    transform: translateY(-2px);
-}
-
-/* 表格样式优化 - 生化数据表风格 */
-.md-typeset table {
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 1px solid rgba(22, 93, 255, 0.15);
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.md-typeset table th {
-    background: linear-gradient(180deg, #f0f7ff 0%, #e6f0ff 100%);
-    color: var(--md-primary-fg-color--dark);
-    border-bottom: 2px solid var(--md-primary-fg-color);
-}
-
-.md-typeset table tr:hover {
-    background-color: rgba(15, 198, 194, 0.05);
-}
-
-/* 新增生化元素装饰 */
-.md-content::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 200px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10,10 C30,0 70,0 90,10 C100,30 100,70 90,90 C70,100 30,100 10,90 C0,70 0,30 10,10 Z' fill='none' stroke='rgba(15, 198, 194, 0.1)' stroke-width='1'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: top right;
-    z-index: -1;
-}
-
-/* 分子结构装饰元素 */
-.md-typeset h2::after {
-    content: "◌ ◌";
-    color: var(--md-accent-fg-color);
-    font-size: 0.8rem;
-    margin-left: 10px;
-    opacity: 0.7;
-}
-
-/* 实验数据卡片样式 */
-.data-card {
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     border-radius: 8px;
-    border-left: 4px solid var(--md-primary-fg-color);
-    padding: 1rem;
-    margin: 1.5rem 0;
-    box-shadow: 0 3px 10px rgba(22, 93, 255, 0.07);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
 }
 
-/* 实验步骤编号样式 */
-.protocol-step {
-    counter-increment: step-counter;
-    position: relative;
-    padding-left: 2.5rem;
-    margin-bottom: 1rem;
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .md-tabs__link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
 }
-
-.protocol-step::before {
-    content: counter(step-counter);
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: var(--md-accent-fg-color);
-    color: white;
-    width: 1.8rem;
-    height: 1.8rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-

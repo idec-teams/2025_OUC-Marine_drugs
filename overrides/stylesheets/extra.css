@@ -1,240 +1,349 @@
-/* 基础色调配置 - 蓝白主调 */
+/* 统一色彩系统 - 强化生化科技感 */
 :root {
-    --md-primary-fg-color: #0070f3;      /* 科技主蓝 */
-    --md-primary-fg-color--light: #4080FF;
-    --md-primary-fg-color--dark: #0f172a;  /* 深色底 */
-    --md-accent-fg-color: #00e0ff;       /* 化学荧光蓝 */
-    --md-background-color: #f8fafc;      /* 浅色背景 */
-    --accent-chem: #ff7a00;              /* 化学橙 */
-    --shadow: 0 4px 15px rgba(0, 112, 243, 0.2); /* 科技感阴影 */
-    --grid-pattern: linear-gradient(rgba(0, 112, 243, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 112, 243, 0.04) 1px, transparent 1px);
+    --md-primary-fg-color: #0a5cad;      /* 深海蓝主色调（呼应海洋药物主题） */
+    --md-primary-fg-color--light: #3584e4;
+    --md-primary-fg-color--dark: #05386b;
+    --md-accent-fg-color: #00e0ff;       /* 荧光蓝（生化分子荧光） */
+    --accent-chem: #ff7a00;              /* 化学橙（实验试剂色） */
+    --accent-bio: #3ddc84;               /* 生物绿（细胞/叶绿素） */
+    --md-background-color: #f0f7ff;      /* 浅蓝背景（类似实验室工作台） */
+    --content-bg: #ffffff;               /* 内容区白色 */
+    --border-color: rgba(10, 92, 173, 0.15); /* 边框色 */
+    --shadow-sm: 0 2px 8px rgba(10, 92, 173, 0.1);
+    --shadow-md: 0 4px 16px rgba(10, 92, 173, 0.15);
+    --shadow-lg: 0 8px 24px rgba(10, 92, 173, 0.2);
+    /* 生化网格纹理 */
+    --grid-pattern: linear-gradient(rgba(10, 92, 173, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10, 92, 173, 0.05) 1px, transparent 1px);
+    /* 分子结构纹理 */
+    --molecule-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230a5cad' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* 更新导航栏样式 */
-.md-header {
-    background: linear-gradient(135deg, var(--md-primary-fg-color--dark), var(--md-primary-fg-color));
-    box-shadow: var(--shadow);
-    height: auto; /* 恢复自动高度 */
-    padding: 0.8rem 0;
+/* 全局容器统一样式 */
+.md-container {
+    background-color: var(--md-background-color);
+    background-image: var(--molecule-pattern);
 }
 
-/* 调整Logo样式 */
-.md-header__button.md-logo img,
-.md-header__button.md-logo svg {
-    height: 3rem; /* 适当调整Logo大小 */
-    margin: 0;
-}
-
-/* 导航栏标签样式 */
-.md-tabs {
-    background-color: white;
-    box-shadow: var(--shadow);
-    border-bottom: none;
-    display: flex;
-    justify-content: center;
-    padding: 0.8rem 1rem;
-}
-
-/* 导航项样式 */
-.md-tabs__link {
-    color: var(--md-primary-fg-color--dark);
-    padding: 0.7rem 1.4rem;
-    border-radius: 25px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    font-size: 1rem; /* 调整字体大小 */
-    margin: 0 0.35rem;
-}
-
-.md-tabs__link:hover, .md-tabs__link--active {
-    background-color: var(--md-primary-fg-color);
-    color: white;
-    border-color: var(--md-accent-fg-color);
-    box-shadow: 0 3px 9px rgba(0, 112, 243, 0.25);
-}
-
-.md-tabs__link--active::after {
-    display: none; /* 移除原有的下划线 */
-}
-
-/* 内容区域网格背景 */
+/* 所有内容页统一容器样式 */
 .md-content__inner {
-    background-image: var(--grid-pattern);
-    background-size: 22px 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    background-color: var(--content-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    position: relative;
 }
 
-/* 头部下方装饰线 */
-.md-header::after {
+/* 统一卡片组件样式 */
+.card {
+    background: var(--content-bg);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 4px;
     background: linear-gradient(90deg, var(--md-accent-fg-color), var(--accent-chem));
 }
 
-/* 模块内容样式调整 */
-.content {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
-/* 响应式适配 */
-@media (max-width: 768px) {
-    .md-tabs__link {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
+/* 统一标题样式 */
+h1, h2, h3, h4, h5 {
+    color: var(--md-primary-fg-color--dark);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-/* 顶部导航栏按钮样式 - 与现有导航风格一致 */
-.md-header__button.custom-nav-btn {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    padding: 0.5rem 1rem;
-    margin: 0 0.25rem;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-chem), var(--accent-bio));
+}
+
+/* 统一段落样式 */
+p {
+    color: #334155;
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+/* 统一链接样式 */
+a {
+    color: var(--md-primary-fg-color);
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
+    transition: all 0.2s ease;
+    position: relative;
 }
 
-/* 按钮悬停效果 - 放大并加深背景 */
-.md-header__button.custom-nav-btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
-    color: white;
+a:hover {
+    color: var(--accent-chem);
 }
 
-/* 按钮激活状态 - 使用主色调强调 */
-.md-header__button.custom-nav-btn--active {
-    background-color: var(--md-accent-fg-color);
-    box-shadow: 0 2px 8px rgba(15, 198, 194, 0.4);
+a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-chem);
+    transition: width 0.3s ease;
 }
 
-/* 按钮图标样式（如需） */
-.md-header__button.custom-nav-btn svg {
-    margin-right: 0.5rem;
-    height: 1.2rem;
-    width: 1.2rem;
+a:hover::after {
+    width: 100%;
 }
 
-/* 新增图片样式 - 解决图片显示问题并美化 */
-.content-image {
-    max-width: 100%;
-    height: auto;
-    margin: 1.5rem auto;
-    display: block;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 112, 243, 0.15);
-    transition: transform 0.3s ease;
+/* 统一导航栏样式 */
+.md-header {
+    background: linear-gradient(135deg, var(--md-primary-fg-color--dark), var(--md-primary-fg-color));
+    box-shadow: var(--shadow-md);
+    position: relative;
+    z-index: 1000;
 }
 
-.content-image:hover {
-    transform: scale(1.02);
+.md-header__title {
+    color: white !important;
+    font-weight: 600;
 }
 
-/* 增强内容区块美化 */
-.content {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    margin-bottom: 2rem;
+/* 统一标签页导航 */
+.md-tabs {
+    background-color: var(--content-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: none;
+}
+
+.md-tabs__list {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.md-tabs__link {
+    color: var(--md-primary-fg-color--dark);
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.25rem;
+    border-radius: 6px 6px 0 0;
     transition: all 0.3s ease;
-    border-top: 4px solid var(--md-primary-fg-color);
 }
 
-.content:hover {
-    box-shadow: 0 8px 30px rgba(0, 112, 243, 0.2);
+.md-tabs__link--active {
+    background-color: var(--md-primary-fg-color);
+    color: white;
+    box-shadow: none;
 }
 
-/* 表格美化 */
-.md-content__inner table {
+/* 统一页脚样式 */
+.md-footer {
+    background-color: var(--md-primary-fg-color--dark);
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 3rem;
+}
+
+.md-footer-meta {
+    background-color: var(--md-primary-fg-color--dark);
+}
+
+/* 统一表格样式 */
+table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     margin: 1.5rem 0;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
 }
 
-.md-content__inner th {
+th {
     background-color: var(--md-primary-fg-color);
     color: white;
-    font-weight: 600;
-    padding: 0.8rem 1rem;
+    padding: 0.8rem 1.2rem;
     text-align: left;
+    font-weight: 600;
 }
 
-.md-content__inner td {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid #f0f0f0;
+td {
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid var(--border-color);
 }
 
-.md-content__inner tr:hover {
-    background-color: rgba(0, 112, 243, 0.03);
+tr:last-child td {
+    border-bottom: none;
 }
 
-/* 引用样式优化 */
-.reference-list {
-    line-height: 1.8;
-    padding: 1rem;
-    border-left: 3px solid var(--md-accent-fg-color);
-    background-color: rgba(0, 224, 255, 0.05);
-    margin-bottom: 1.5rem;
-    border-radius: 0 4px 4px 0;
+tr:nth-child(even) {
+    background-color: rgba(10, 92, 173, 0.02);
 }
 
-/* 响应式优化 */
-@media (max-width: 768px) {
-    .content {
-        padding: 1.2rem;
-    }
-
-    .md-tabs {
-        flex-wrap: wrap;
-    }
-
-    .md-tabs__link {
-        margin-bottom: 0.5rem;
-    }
+tr:hover {
+    background-color: rgba(10, 92, 173, 0.05);
 }
 
-/* 标题样式增强 */
-.md-content h1, .md-content h2, .md-content h3 {
-    position: relative;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+/* 统一图片样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    margin: 1.5rem auto;
+    display: block;
 }
 
-.md-content h2::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 3px;
+img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+/* 统一代码块样式 */
+.md-code {
+    background-color: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-chem);
+}
+
+/* 统一引用样式 */
+blockquote {
+    border-left: 3px solid var(--accent-bio);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background-color: rgba(61, 220, 132, 0.05);
+    border-radius: 0 6px 6px 0;
+}
+
+/* 统一按钮样式 */
+.md-button {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--md-primary-fg-color);
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.md-button:hover {
+    background-color: var(--md-primary-fg-color--dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: white;
+}
+
+.md-button--accent {
     background-color: var(--accent-chem);
 }
 
-/* 段落样式优化 */
-.md-content p {
-    line-height: 1.8;
-    margin-bottom: 1.2rem;
-    color: #333;
+.md-button--accent:hover {
+    background-color: #e06a00;
 }
 
-/* 强调文本样式 */
-.md-content strong {
-    color: var(--md-primary-fg-color);
-    font-weight: 600;
+/* DNA螺旋装饰 */
+.biochem-helix {
+    position: fixed;
+    width: 4px;
+    background: linear-gradient(
+            to bottom,
+            var(--md-primary-fg-color) 0%,
+            var(--md-accent-fg-color) 25%,
+            var(--md-primary-fg-color) 50%,
+            var(--md-accent-fg-color) 75%,
+            var(--md-primary-fg-color) 100%
+    );
+    background-size: 100% 120px;
+    animation: helixMove 15s linear infinite;
+    border-radius: 2px;
+    opacity: 0.7;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* 浮动分子装饰 */
+.floating-molecule {
+    position: fixed;
+    border-radius: 50%;
+    border: 1px dashed var(--md-primary-fg-color);
+    opacity: 0.3;
+    animation: float 20s ease-in-out infinite, rotate 30s linear infinite;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.floating-molecule::before,
+.floating-molecule::after {
+    content: "";
+    position: absolute;
+    background-color: var(--accent-chem);
+    border-radius: 50%;
+}
+
+.floating-molecule::before {
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.floating-molecule::after {
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+/* 动画效果 */
+@keyframes helixMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 120px; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .biochem-helix, .floating-molecule {
+        display: none;
+    }
+
+    .md-content__inner {
+        padding: 1.5rem 1rem;
+        border-radius: 8px;
+    }
 }

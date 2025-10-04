@@ -49,7 +49,6 @@
                     <li><a href="materials_and_methods.html" class="nav-link">Materials & Methods</a></li>
                     <li><a href="conclusion.html" class="nav-link">Conclusion</a></li>
                     <li><a href="references.html" class="nav-link">References</a></li>
-                    <li><a href="author_introduction.html" class="nav-link">Author Introduction</a></li>
                 </ul>
             </li>
 
@@ -76,21 +75,83 @@
     <section class="wiki-module">
         <h2 class="module-heading">Results and Discussion</h2>
         <div class="content">
-            <h3>1. Catalyst Synthesis and Characterization</h3>
-            <p>The Co₃O₄-ZnO nanocomposites were successfully synthesized via a modified sol-gel method followed by hydrothermal treatment. X-ray diffraction (XRD) patterns confirmed the formation of crystalline phases corresponding to Co₃O₄ (JCPDS 42-1467) and ZnO (JCPDS 36-1451) with no impurity phases detected.</p>
+            <h3><em>In vitro</em> activity of P450<sub>S18</sub></h3>
+            <p>&nbsp&nbspUsing the CYP152 family P450 enzyme P450<sub>SPα</sub> as the probe, a homolog
+                protein P450<sub>S18</sub> was successfully identified from a deepsea-derived
+                microorganism. We then amplified the sequences encoding P450<sub>S18</sub>, and
+                cloned it into pET28a. The soluble form of P450<sub>S18</sub> (48.4 KDa) were obtained
+                in Escherichia coli BL21 (DE3) (Fig S1). We then tested the catalytic activities
+                of P450<sub>S18</sub> toward different small molecule compounds containing benzene
+                rings (Fig S2), using H<sub>2</sub>O<sub>2</sub> as the cofactor. Surprisingly, in the presence of H<sub>2</sub>O<sub>2</sub>,
+                P450<sub>S18</sub> could transform OPD (1) to 2,3-diaminophenazine (2) (Fig 2).
+                Phenazines are a class of heterocyclic nitrogenous aromatics featuring a
+                dibenzopytazine core.<sup>[13]</sup> These compounds displayed a wide range of
+                bioactivities, including antimicrobial, antifungal, antitumor, etc.
+                <sup>[13]</sup>
+                It is reported
+                that the formation of natural phenazines need multiple steps and enzymes.<sup>[14]</sup>
+                While P450<sub>S18</sub> could transform OPD (1) to 2,3-diaminophenazine (2) directly
+                through C‒N bond construction, demonstrating its potential use for phenazines
+                construction. Therefore, we next engineered P450<sub>S18</sub> for better catalytic
+                activities toward the substrate OPD (1).
+            </p>
+            <img src="../img/2.png" alt="Figure 2. In vitro characterization of P450S18 toward OPD (1)." style="display: block; margin: 0 auto;"/>
+            <p> &nbsp&nbsp<strong>Figure 2. <em>In vitro</em> characterization of P450<sub>S18</sub> toward OPD (1).</strong>(A) HPLC
+                profiles of <em>in vitro</em> assays of P450<sub>S18</sub> toward OPD (1). (i) 0.5 mM OPD (1) + 10
+                mM H<sub>2</sub>O<sub>2</sub>; (ii) 0.5 mM OPD (1) + 10 mM H<sub>2</sub>O<sub>2</sub> + 10 μM P450<sub>S18</sub>. The reactions
+                were incubated at 30 ℃ for 2 h. (B) HRMS analysis of 2,3-diaminophenazine
+                (2). (C) The reaction scheme of P450<sub>S18</sub> toward OPD (1).</p>
 
-            <p>Transmission electron microscopy (TEM) images revealed spherical nanoparticles with an average diameter of 12 ± 3 nm, showing good dispersion and uniform size distribution. BET surface area measurements indicated a high specific surface area of 168 m²/g, which is significantly higher than that of single-component Co₃O₄ (87 m²/g) or ZnO (65 m²/g) prepared under similar conditions.</p>
-
-            <h3>2. Catalytic Activity Evaluation</h3>
-            <p>The catalytic performance of Co₃O₄-ZnO nanocomposites was evaluated in the Suzuki-Miyaura cross-coupling reaction between phenylboronic acid and bromobenzene. The results are summarized in Table 1:</p>
-
-            <p>Under optimized conditions (0.5 mol% catalyst, 25°C, ethanol/water solvent), the reaction achieved 98% conversion with 96% selectivity to biphenyl after 2 hours. This performance is comparable to that of commercial Pd/C catalysts but without the use of precious metals.</p>
-
-            <h3>3. Catalyst Stability and Recyclability</h3>
-            <p>The recycling study showed that the Co₃O₄-ZnO catalyst could be reused for up to 5 consecutive cycles with only a 7% decrease in activity (from 98% to 91% conversion). XRD analysis after the 5th cycle confirmed that the crystalline structure of the catalyst remained intact, indicating good structural stability.</p>
-
-            <h3>4. Reaction Mechanism</h3>
-            <p>Based on control experiments and literature reports, a plausible reaction mechanism involves the activation of the aryl halide by the Co₃O₄ component, followed by transmetallation with the phenylboronic acid, and finally reductive elimination to form the coupling product. The ZnO component appears to enhance the adsorption of reactants and stabilize the catalytically active sites.</p>
+            <h3>Identification of the candidate residues of P450<sub>S18</sub> for directed evolution</h3>
+            <p>&nbsp&nbspTo investigate the potential substrate binding residues in P450<sub>S18</sub>, we first
+                modeled its protein structure using Alphafold 3. P450<sub>S18</sub> adopted a typical
+                triangular-shaped P450-fold. Furthermore, we constructed a substrate binding
+                model of two OPD (1) molecules in P450<sub>S18</sub> through Autodock vina. As shown
+                in Fig 3, two OPD molecules were present in front of the heme center. The
+                amino groups of two substrates form hydrogen bonds with Thr296, Phe295,
+                Gln88 and Arg245. Moreover, the substrates were stabilized through lots of p-
+                π and π-π interactions with Phe295, Phe292, Phe176, Pro246 and Phe82.
+                Based on the substrate binding modes, we speculate that these residues may
+                be involved in the catalytic activity of P450<sub>S18</sub> toward OPD (1). Therefore, we
+                selected Phe295, Arg245, Pro246, Phe176, Phe292, Phe82, Gln88 and Thr296
+                for further directed evolution studies.</p>
+            <img src="../img/3.png" alt="Figure 3. Binding modes of the P450S18 with OPD (1)." style="display: block; margin: 0 auto;"/>
+            <p> &nbsp&nbsp<strong>Figure 3. Binding modes of the P450<sub>S18</sub> with OPD (1).</strong>The substrate OPD
+                was shown as green sticks; the heme center was shown as magenta sticks;
+                and the residues of P450<sub>S18</sub> were depicted as cyan sticks.</p>
+            <h3>Alanine scanning and reaction activity screening of mutants</h3>
+            <p>&nbsp&nbspWe then used alanine scanning of the substrate binding-related residues to
+                engineer P450<sub>S18</sub>. We constructed seven mutants F82A, Q88A, F176A, P246A,
+                R245A, F295A, T296A andF292A. Reverse complementary primers with
+                mutation sites were designed to amplify the linear expression plasmids
+                (pET28a/P450<sub>S18</sub>) with mutated sequences. The resulting linear plasmids were
+                ligated to circular molecules by seamless cloning, and then introduced into E.
+                coli BL21 (DE<sub>3</sub>). The expression strains were individually cultured, followed by
+                addition of 0.2 mM IPTG to induce protein expression (Fig S3). Crude enzymes
+                from each expression strain was incubated with H<sub>2</sub>O<sub>2</sub> and OPD (1) for 2 h, and
+                the generation of 2,3-diaminophenazine (2) was detected by HPLC. As shown
+                in Fig 4, compared to that of the wild-type P450<sub>S18</sub>, the catalytic activities of
+                F295A, P246A, F176A, F292A, F82A, and Q88A toward OPD (1) increased by
+                ~2-5 fold (Fig 4).
+                <img src="../img/4.png" alt="Figure 4. The relative activities of the crude enzymes of P450S18 and its
+variants." style="display: block; margin: 0 auto;"/>
+            <p> &nbsp&nbsp<strong>Figure 4. The relative activities of the crude enzymes of P450<sub>S18</sub> and its
+                variants.</strong></p>
+            <h3><em>In vitro</em> characterization of the P450<sub>S18</sub> variants F295A, P246A, F176A,
+                F292A, F82A and Q88A</h3>
+            <p>&nbsp&nbspIn order to accurately evaluate the catalytic efficiencies of the variants selected,
+                we purified the P450<sub>S18</sub> variants F295A, P246A, F176A, F292A, F82A and
+                Q88A (Fig S4). We tested the catalytic activities of the mutants and wild-type
+                enzyme toward OPD (1) in the presence of H<sub>2</sub>O</sub>2</sub>. As shown in Fig 5, compared
+                to the wild-type enzyme, all of the selected mutants increased the catalytic
+                efficiency toward OPD (1). F82A and Q88A increased by ~1.5-fold; F295A,
+                P246A and F176A increased by ~2.2-fold; while F292A exhibited the highest
+                catalytic ability, which increased by ~3.5-fold. We proposed that the increased
+                activities of mutants may due to the reduction of steric hindrance. These results
+                indicated that engineering of the binding residues could significantly increase
+                the catalytic activity of P450<sub>S18</sub> toward OPD (1).</p>
+            <img src="../img/5.png" alt="Figure 5 The relative activities of P450S18 and its mutants." style="display: block; margin: 0 auto;"/>
+            <p> &nbsp&nbsp<strong>Figure 5 The relative activities of P450<sub>S18</sub> and its mutants.</strong></p>
         </div>
     </section>
 </div>

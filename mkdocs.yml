@@ -19,16 +19,17 @@ theme:
     text: Roboto
     code: Roboto Mono
 
-# 调整导航结构以匹配示例
+# 调整导航结构，将内容页面统一放在Project菜单下
 nav:
   - Home: index.md
-  - Abstract: abstract.md
-  - Introduction: introduction.md
-  - Results: results.md
-  - Materials & Methods: materials_and_methods.md
-  - Conclusion: conclusion.md
-  - References: references.md
-  - Author Introduction: author_introduction.md
+  - Project:
+      - Abstract: abstract.md
+      - Introduction: introduction.md
+      - Results: results.md
+      - Materials & Methods: materials_and_methods.md
+      - Conclusion: conclusion.md
+      - References: references.md
+      - Author Introduction: author_introduction.md
   - Documentation:
       - Experimental Protocols: documentation/protocols.md
       - Lab Notebook: documentation/notebook.md

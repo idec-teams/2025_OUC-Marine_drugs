@@ -2,30 +2,32 @@ site_name: iDEC 2025 | OUC-Marine drugs
 
 theme:
   name: material
-  # 保留原主题配置（logo、颜色等）
   logo: img/idec-wiki-logo-white-bg.png
   favicon: img/idec-wiki-logo.png
   palette:
     primary: blue
     accent: cyan
   features:
-    - navigation.expand  # 确保子菜单可展开
-    - navigation.tabs    # 如需标签页导航
+    - navigation.expand
+    - navigation.top
+    # - navigation.tabs  # Uncomment if tab navigation is needed
 
 nav:
-  - 首页: index.md  # 确保index.md存在于根目录
-  - 项目 (Project):
-      - 摘要 (Abstract): abstract.md          # 确保文件名为abstract.md
-      - 引言 (Introduction): introduction.md  # 文件名与路径匹配
-      - 结果 (Results): results.md
-      - 材料与方法 (Materials & Methods): materials_and_methods.md
-      - 结论 (Conclusion): conclusion.md
-      - 参考文献 (References): references.md
-      - 作者介绍 (Author Introduction): author_introduction.md
-  - 文档 (Documentation):
-      - 实验方案: documentation/protocols.md  # 确保文件在documentation文件夹下
-      - 实验记录: documentation/notebook.md
+  - Home: index.md
+  - Project:
+      - Abstract: abstract.md
+      - Introduction: introduction.md
+      - Results: results.md
+      - Materials and Methods: materials_and_methods.md
+      - Conclusion: conclusion.md
+      - References: references.md
+      - Author Introduction: author_introduction.md
+  - Documentation:
+      - Experimental Protocols: documentation/protocols.md
+      - Lab Notebook: documentation/notebook.md
 
-# 其他配置（如插件、额外资源）
 plugins:
-  - search  # 确保搜索插件正常加载
+  - search
+
+extra:
+  homepage: https://idec.io

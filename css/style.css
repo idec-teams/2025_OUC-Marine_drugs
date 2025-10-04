@@ -96,6 +96,7 @@ nav {
     font-weight: 500;
     transition: all 0.3s ease;
     display: inline-block;
+    position: relative; /* 新增 */
 }
 
 .nav-link:hover, .nav-link.active {
@@ -116,6 +117,17 @@ nav {
     padding: 0.5rem 0;
     margin-top: 0.5rem;
     display: none;
+    z-index: 1000; /* 增加z-index确保下拉菜单在最上层 */
+}
+
+/* 新增hover状态保持显示 */
+.has-dropdown:hover .dropdown {
+    display: block;
+}
+
+/* 确保下拉菜单项hover时不关闭菜单 */
+.dropdown:hover {
+    display: block;
 }
 
 .dropdown li {

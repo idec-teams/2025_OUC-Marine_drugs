@@ -1,31 +1,35 @@
-/* 统一色彩系统 - 强化生化科技感 */
+/* 生物化学感色彩系统 - 强化科技感 */
 :root {
-    --md-primary-fg-color: #0a5cad;      /* 深海蓝主色调（呼应海洋药物主题） */
-    --md-primary-fg-color--light: #3584e4;
-    --md-primary-fg-color--dark: #05386b;
-    --md-accent-fg-color: #00e0ff;       /* 荧光蓝（生化分子荧光） */
-    --accent-chem: #ff7a00;              /* 化学橙（实验试剂色） */
-    --accent-bio: #3ddc84;               /* 生物绿（细胞/叶绿素） */
-    --md-background-color: #f0f7ff;      /* 浅蓝背景（类似实验室工作台） */
+    --md-primary-fg-color: #0d4c92;      /* 深海蓝主色调（呼应海洋药物主题） */
+    --md-primary-fg-color--light: #387fd1;
+    --md-primary-fg-color--dark: #062c5c;
+    --md-accent-fg-color: #00d1ff;       /* 荧光蓝（生化分子荧光） */
+    --accent-chem: #ff6b00;              /* 化学橙（实验试剂色） */
+    --accent-bio: #32cc71;               /* 生物绿（细胞/叶绿素） */
+    --accent-purple: #9d4edd;            /* 紫色（核酸/蛋白质染色） */
+    --md-background-color: #f0f5ff;      /* 浅蓝背景（类似实验室工作台） */
     --content-bg: #ffffff;               /* 内容区白色 */
-    --border-color: rgba(10, 92, 173, 0.15); /* 边框色 */
-    --shadow-sm: 0 2px 8px rgba(10, 92, 173, 0.1);
-    --shadow-md: 0 4px 16px rgba(10, 92, 173, 0.15);
-    --shadow-lg: 0 8px 24px rgba(10, 92, 173, 0.2);
-    /* 生化网格纹理 */
-    --grid-pattern: linear-gradient(rgba(10, 92, 173, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(10, 92, 173, 0.05) 1px, transparent 1px);
-    /* 分子结构纹理 */
-    --molecule-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230a5cad' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    --border-color: rgba(13, 76, 146, 0.18); /* 边框色 */
+    --shadow-sm: 0 2px 8px rgba(13, 76, 146, 0.12);
+    --shadow-md: 0 4px 16px rgba(13, 76, 146, 0.18);
+    --shadow-lg: 0 8px 24px rgba(13, 76, 146, 0.24);
+
+    /* 生化网格纹理 - 类似实验室培养皿网格 */
+    --grid-pattern: linear-gradient(rgba(13, 76, 146, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 76, 146, 0.07) 1px, transparent 1px);
+
+    /* 分子结构纹理 - 增加科技感 */
+    --molecule-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230d4c92' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* 全局容器统一样式 */
+/* 全局容器样式 - 增强生化背景感 */
 .md-container {
     background-color: var(--md-background-color);
-    background-image: var(--molecule-pattern);
+    background-image: var(--molecule-pattern), var(--grid-pattern);
+    background-size: 60px 60px, 20px 20px;
 }
 
-/* 所有内容页统一容器样式 */
+/* 内容容器样式 */
 .md-content__inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -36,7 +40,7 @@
     position: relative;
 }
 
-/* 统一卡片组件样式 */
+/* 生化卡片组件 - 类似培养皿/实验记录卡 */
 .card {
     background: var(--content-bg);
     border-radius: 10px;
@@ -46,24 +50,17 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--md-accent-fg-color), var(--accent-chem));
+    border-top: 4px solid;
+    border-image: linear-gradient(90deg, var(--md-accent-fg-color), var(--accent-chem), var(--accent-bio)) 1;
 }
 
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+    border-color: rgba(13, 76, 146, 0.3);
 }
 
-/* 统一标题样式 */
+/* 标题样式 - 增加生化元素装饰 */
 h1, h2, h3, h4, h5 {
     color: var(--md-primary-fg-color--dark);
     font-weight: 600;
@@ -80,17 +77,17 @@ h2::after {
     bottom: 0;
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--accent-chem), var(--accent-bio));
+    background: linear-gradient(90deg, var(--accent-chem), var(--accent-bio), var(--accent-purple));
 }
 
-/* 统一段落样式 */
+/* 段落样式 */
 p {
-    color: #334155;
+    color: #2d3748;
     line-height: 1.8;
     margin-bottom: 1.2rem;
 }
 
-/* 统一链接样式 */
+/* 链接样式 - 类似分子键效果 */
 a {
     color: var(--md-primary-fg-color);
     text-decoration: none;
@@ -117,12 +114,13 @@ a:hover::after {
     width: 100%;
 }
 
-/* 统一导航栏样式 */
+/* 导航栏样式 - 增强科技感 */
 .md-header {
     background: linear-gradient(135deg, var(--md-primary-fg-color--dark), var(--md-primary-fg-color));
     box-shadow: var(--shadow-md);
     position: relative;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .md-header__title {
@@ -130,7 +128,7 @@ a:hover::after {
     font-weight: 600;
 }
 
-/* 统一标签页导航 */
+/* 标签页导航样式 */
 .md-tabs {
     background-color: var(--content-bg);
     border-bottom: 1px solid var(--border-color);
@@ -148,6 +146,7 @@ a:hover::after {
     margin: 0 0.25rem;
     border-radius: 6px 6px 0 0;
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .md-tabs__link--active {
@@ -156,18 +155,23 @@ a:hover::after {
     box-shadow: none;
 }
 
-/* 统一页脚样式 */
+.md-tabs__link:not(.md-tabs__link--active):hover {
+    background-color: rgba(13, 76, 146, 0.05);
+}
+
+/* 页脚样式 */
 .md-footer {
     background-color: var(--md-primary-fg-color--dark);
     color: rgba(255, 255, 255, 0.8);
     margin-top: 3rem;
+    border-top: 3px solid var(--accent-chem);
 }
 
 .md-footer-meta {
     background-color: var(--md-primary-fg-color--dark);
 }
 
-/* 统一表格样式 */
+/* 表格样式 - 类似实验数据表格 */
 table {
     width: 100%;
     border-collapse: separate;
@@ -197,14 +201,14 @@ tr:last-child td {
 }
 
 tr:nth-child(even) {
-    background-color: rgba(10, 92, 173, 0.02);
+    background-color: rgba(13, 76, 146, 0.03);
 }
 
 tr:hover {
-    background-color: rgba(10, 92, 173, 0.05);
+    background-color: rgba(13, 76, 146, 0.07);
 }
 
-/* 统一图片样式 */
+/* 图片样式 - 类似显微镜下的观察结果 */
 img {
     max-width: 100%;
     height: auto;
@@ -213,6 +217,7 @@ img {
     transition: all 0.3s ease;
     margin: 1.5rem auto;
     display: block;
+    border: 1px solid rgba(13, 76, 146, 0.1);
 }
 
 img:hover {
@@ -220,23 +225,23 @@ img:hover {
     box-shadow: var(--shadow-md);
 }
 
-/* 统一代码块样式 */
+/* 代码块样式 - 类似实验代码 */
 .md-code {
     background-color: #f8fafc;
     border-radius: 6px;
     border-left: 3px solid var(--accent-chem);
 }
 
-/* 统一引用样式 */
+/* 引用样式 - 类似实验笔记 */
 blockquote {
     border-left: 3px solid var(--accent-bio);
     padding: 1rem 1.5rem;
     margin: 1.5rem 0;
-    background-color: rgba(61, 220, 132, 0.05);
+    background-color: rgba(50, 204, 113, 0.05);
     border-radius: 0 6px 6px 0;
 }
 
-/* 统一按钮样式 */
+/* 按钮样式 - 类似实验室仪器按钮 */
 .md-button {
     display: inline-block;
     padding: 0.6rem 1.2rem;
@@ -247,6 +252,7 @@ blockquote {
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 500;
+    box-shadow: 0 2px 4px rgba(13, 76, 146, 0.2);
 }
 
 .md-button:hover {
@@ -261,10 +267,10 @@ blockquote {
 }
 
 .md-button--accent:hover {
-    background-color: #e06a00;
+    background-color: #e06000;
 }
 
-/* DNA螺旋装饰 */
+/* DNA螺旋装饰 - 增强生物化学感 */
 .biochem-helix {
     position: fixed;
     width: 4px;
@@ -284,7 +290,7 @@ blockquote {
     pointer-events: none;
 }
 
-/* 浮动分子装饰 */
+/* 浮动分子装饰 - 类似分子结构 */
 .floating-molecule {
     position: fixed;
     border-radius: 50%;
@@ -317,6 +323,16 @@ blockquote {
     top: 50%;
     right: 0;
     transform: translate(50%, -50%);
+}
+
+/* 生化元素装饰 - 新增蛋白质结构感装饰 */
+.protein-structure {
+    position: absolute;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--accent-purple), transparent);
+    opacity: 0.4;
+    z-index: 5;
+    pointer-events: none;
 }
 
 /* 动画效果 */

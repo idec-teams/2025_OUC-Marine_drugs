@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    targetElement.scrollIntoView({
+                    // 计算导航栏高度，避免被导航栏遮挡
+                    const headerHeight = document.querySelector('.md-header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
                         behavior: 'smooth'
                     });
                 }
@@ -22,13 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('section[id]');
         let current = '';
+        const headerHeight = document.querySelector('.md-header').offsetHeight;
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
 
-            if (pageYOffset >= (sectionTop - 150) &&
-                pageYOffset < (sectionTop + sectionHeight - 150)) {
+            if (pageYOffset >= (sectionTop - headerHeight - 50) &&
+                pageYOffset < (sectionTop + sectionHeight - headerHeight - 50)) {
                 current = section.getAttribute('id');
             }
         });
@@ -40,4 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // 页面加载时触发一次滚动事件，确保导航状态正确
+    window.dispatchEvent(new Event('scroll'));
 });

@@ -126,3 +126,115 @@
     width: 1.2rem;
 }
 
+/* 新增图片样式 - 解决图片显示问题并美化 */
+.content-image {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 112, 243, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.content-image:hover {
+    transform: scale(1.02);
+}
+
+/* 增强内容区块美化 */
+.content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    border-top: 4px solid var(--md-primary-fg-color);
+}
+
+.content:hover {
+    box-shadow: 0 8px 30px rgba(0, 112, 243, 0.2);
+}
+
+/* 表格美化 */
+.md-content__inner table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.md-content__inner th {
+    background-color: var(--md-primary-fg-color);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 1rem;
+    text-align: left;
+}
+
+.md-content__inner td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.md-content__inner tr:hover {
+    background-color: rgba(0, 112, 243, 0.03);
+}
+
+/* 引用样式优化 */
+.reference-list {
+    line-height: 1.8;
+    padding: 1rem;
+    border-left: 3px solid var(--md-accent-fg-color);
+    background-color: rgba(0, 224, 255, 0.05);
+    margin-bottom: 1.5rem;
+    border-radius: 0 4px 4px 0;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .content {
+        padding: 1.2rem;
+    }
+
+    .md-tabs {
+        flex-wrap: wrap;
+    }
+
+    .md-tabs__link {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* 标题样式增强 */
+.md-content h1, .md-content h2, .md-content h3 {
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.md-content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-chem);
+}
+
+/* 段落样式优化 */
+.md-content p {
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    color: #333;
+}
+
+/* 强调文本样式 */
+.md-content strong {
+    color: var(--md-primary-fg-color);
+    font-weight: 600;
+}

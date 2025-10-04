@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experimental Protocols - Chemical Research Wiki</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- 头部和导航栏结构省略（与其他页面一致） -->
+<header>
+  <div class="header-wrap">
+    <h1 class="wiki-main-title">Chemical Material Research Wiki</h1>
+    <p class="wiki-subtitle">Functional Chemical Experiment Documentation</p>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-wrap">
+    <ul class="main-nav">
+      <li><a href="../index.html" class="nav-link">Home</a></li>
+
+      <li class="has-dropdown">
+        <a href="#" class="nav-link">Project</a>
+        <ul class="dropdown">
+          <li><a href="../project/abstract.html" class="nav-link">Abstract</a></li>
+          <li><a href="../project/introduction.html" class="nav-link">Introduction</a></li>
+          <li><a href="../project/results.html" class="nav-link">Results</a></li>
+          <li><a href="../project/materials_and_methods.html" class="nav-link">Materials & Methods</a></li>
+          <li><a href="../project/conclusion.html" class="nav-link">Conclusion</a></li>
+          <li><a href="../project/references.html" class="nav-link">References</a></li>
+          <li><a href="../project/author_introduction.html" class="nav-link">Author Introduction</a></li>
+        </ul>
+      </li>
+
+      <li class="has-dropdown">
+        <a href="#" class="nav-link">Documentation</a>
+        <ul class="dropdown">
+          <li><a href="experimental_protocols.html" class="nav-link active">Experimental Protocols</a></li>
+          <li><a href="lab_notebook.html" class="nav-link">Lab Notebook</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="content-wrap">
+  <section class="wiki-module">
+    <h2 class="module-heading">Experimental Protocols</h2>
+    <div class="content">
+      <h3>Protocol 1: Synthesis of Co₃O₄-ZnO Nanocomposites</h3>
+      <p><strong>Safety Precautions:</strong> Wear appropriate personal protective equipment (lab coat, gloves, safety glasses). Perform in a fume hood. Sodium hydroxide is corrosive - avoid contact with skin and eyes.</p>
+
+      <p><strong>Materials Required:</strong></p>
+      <ul>
+        <li>Cobalt(II) nitrate hexahydrate</li>
+        <li>Zinc nitrate hexahydrate</li>
+        <li>Sodium hydroxide</li>
+        <li>Ethylene glycol</li>
+        <li>Deionized water</li>
+        <li>50 mL Teflon-lined autoclave</li>
+        <li>Magnetic stirrer and stir bar</li>
+        <li>Centrifuge tubes</li>
+        <li>Centrifuge</li>
+        <li>Vacuum oven</li>
+        <li>Muffle furnace</li>
+      </ul>
+
+      <p><strong>Procedure:</strong></p>
+      <ol>
+        <li>Prepare a 250 mL round-bottom flask with a magnetic stir bar.</li>
+        <li>Add 1.0 mmol Co(NO₃)₂·6H₂O and 1.0 mmol Zn(NO₃)₂·6H₂O to the flask.</li>
+        <li>Add 30 mL ethylene glycol and stir until completely dissolved (approximately 10 minutes).</li>
+        <li>In a separate beaker, dissolve 8.0 mmol NaOH in 10 mL ethylene glycol.</li>
+        <li>Add the NaOH solution dropwise to the metal nitrate solution while stirring continuously. A purple precipitate will form immediately.</li>
+        <li>Continue stirring for 30 minutes after complete addition.</li>
+        <li>Transfer the mixture to a 50 mL Teflon-lined autoclave.</li>
+        <li>Seal the autoclave and heat at 160°C for 12 hours in an oven.</li>
+        <li>After the reaction, turn off the oven and allow the autoclave to cool to room temperature naturally.</li>
+        <li>Decant the supernatant and transfer the precipitate to centrifuge tubes.</li>
+        <li>Centrifuge at 8000 rpm for 5 minutes.</li>
+        <li>Discard the supernatant and resuspend the precipitate in deionized water.</li>
+        <li>Repeat centrifugation and washing with deionized water three times.</li>
+        <li>Wash once more with ethanol.</li>
+        <li>Transfer the precipitate to a Petri dish and dry in a vacuum oven at 60°C overnight.</li>
+        <li>Grind the dried powder into a fine powder using a mortar and pestle.</li>
+        <li>Calcinate the powder in a muffle furnace at 400°C for 2 hours with a heating rate of 2°C/min.</li>
+        <li>Allow to cool to room temperature and store in a desiccator.</li>
+      </ol>
+
+      <h3>Protocol 2: Suzuki-Miyaura Cross-Coupling Reaction</h3>
+      <p><strong>Safety Precautions:</strong> Perform in a fume hood. Bromobenzene is toxic and carcinogenic - avoid inhalation and contact with skin.</p>
+
+      <p><strong>Procedure:</strong></p>
+      <ol>
+        <li>Add phenylboronic acid (1.0 mmol), bromobenzene (0.5 mmol), and NaOH (2.0 mmol) to a 25 mL round-bottom flask.</li>
+        <li>Add the Co₃O₄-ZnO catalyst (0.5 mol% relative to bromobenzene).</li>
+        <li>Add 5 mL ethanol and 1 mL deionized water.</li>
+        <li>Equip the flask with a magnetic stir bar and stirrer.</li>
+        <li>Stir the reaction mixture at 25°C for 2 hours.</li>
+        <li>After completion, add 10 mL ethyl acetate to the reaction mixture.</li>
+        <li>Filter to remove the catalyst.</li>
+        <li>Analyze the filtrate using gas chromatography.</li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<script>
+  // 导航栏激活状态设置
+  const currentPath = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const linkPath = link.getAttribute('href').split('/').pop();
+    if (linkPath === currentPath) {
+      link.classList.add('active');
+    }
+  });
+</script>
+</body>
+</html>

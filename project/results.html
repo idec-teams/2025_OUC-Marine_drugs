@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Chemical Research Wiki</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- 头部和导航栏结构省略（与其他页面一致） -->
+<header>
+    <div class="header-wrap">
+        <h1 class="wiki-main-title">Chemical Material Research Wiki</h1>
+        <p class="wiki-subtitle">Functional Chemical Experiment Documentation</p>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-wrap">
+        <ul class="main-nav">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Project</a>
+                <ul class="dropdown">
+                    <li><a href="abstract.html" class="nav-link">Abstract</a></li>
+                    <li><a href="introduction.html" class="nav-link">Introduction</a></li>
+                    <li><a href="results.html" class="nav-link active">Results</a></li>
+                    <li><a href="materials_and_methods.html" class="nav-link">Materials & Methods</a></li>
+                    <li><a href="conclusion.html" class="nav-link">Conclusion</a></li>
+                    <li><a href="references.html" class="nav-link">References</a></li>
+                    <li><a href="author_introduction.html" class="nav-link">Author Introduction</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Documentation</a>
+                <ul class="dropdown">
+                    <li><a href="../documentation/experimental_protocols.html" class="nav-link">Experimental Protocols</a></li>
+                    <li><a href="../documentation/lab_notebook.html" class="nav-link">Lab Notebook</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="content-wrap">
+    <section class="wiki-module">
+        <h2 class="module-heading">Results and Discussion</h2>
+        <div class="content">
+            <h3>1. Catalyst Synthesis and Characterization</h3>
+            <p>The Co₃O₄-ZnO nanocomposites were successfully synthesized via a modified sol-gel method followed by hydrothermal treatment. X-ray diffraction (XRD) patterns confirmed the formation of crystalline phases corresponding to Co₃O₄ (JCPDS 42-1467) and ZnO (JCPDS 36-1451) with no impurity phases detected.</p>
+
+            <p>Transmission electron microscopy (TEM) images revealed spherical nanoparticles with an average diameter of 12 ± 3 nm, showing good dispersion and uniform size distribution. BET surface area measurements indicated a high specific surface area of 168 m²/g, which is significantly higher than that of single-component Co₃O₄ (87 m²/g) or ZnO (65 m²/g) prepared under similar conditions.</p>
+
+            <h3>2. Catalytic Activity Evaluation</h3>
+            <p>The catalytic performance of Co₃O₄-ZnO nanocomposites was evaluated in the Suzuki-Miyaura cross-coupling reaction between phenylboronic acid and bromobenzene. The results are summarized in Table 1:</p>
+
+            <p>Under optimized conditions (0.5 mol% catalyst, 25°C, ethanol/water solvent), the reaction achieved 98% conversion with 96% selectivity to biphenyl after 2 hours. This performance is comparable to that of commercial Pd/C catalysts but without the use of precious metals.</p>
+
+            <h3>3. Catalyst Stability and Recyclability</h3>
+            <p>The recycling study showed that the Co₃O₄-ZnO catalyst could be reused for up to 5 consecutive cycles with only a 7% decrease in activity (from 98% to 91% conversion). XRD analysis after the 5th cycle confirmed that the crystalline structure of the catalyst remained intact, indicating good structural stability.</p>
+
+            <h3>4. Reaction Mechanism</h3>
+            <p>Based on control experiments and literature reports, a plausible reaction mechanism involves the activation of the aryl halide by the Co₃O₄ component, followed by transmetallation with the phenylboronic acid, and finally reductive elimination to form the coupling product. The ZnO component appears to enhance the adsorption of reactants and stabilize the catalytically active sites.</p>
+        </div>
+    </section>
+</div>
+
+<script>
+    // 导航栏激活状态设置
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
+</body>
+</html>

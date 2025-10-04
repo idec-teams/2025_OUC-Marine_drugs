@@ -34,8 +34,3 @@ nav:
       - Experimental Protocols: documentation/protocols.md
       - Lab Notebook: documentation/notebook.md
 
-# 添加额外的JavaScript配置
-extra_javascript:
-  - javascripts/nav.js
-  - javascripts/config.js
-  - javascripts/tables.js

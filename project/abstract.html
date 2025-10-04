@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract - Chemical Research Wiki</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header>
+    <div class="header-wrap">
+        <h1 class="wiki-main-title">Chemical Material Research Wiki</h1>
+        <p class="wiki-subtitle">Functional Chemical Experiment Documentation</p>
+    </div>
+</header>
+
+<!-- 导航栏 -->
+<nav>
+    <div class="nav-wrap">
+        <ul class="main-nav">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Project</a>
+                <ul class="dropdown">
+                    <li><a href="abstract.html" class="nav-link active">Abstract</a></li>
+                    <li><a href="introduction.html" class="nav-link">Introduction</a></li>
+                    <li><a href="results.html" class="nav-link">Results</a></li>
+                    <li><a href="materials_and_methods.html" class="nav-link">Materials & Methods</a></li>
+                    <li><a href="conclusion.html" class="nav-link">Conclusion</a></li>
+                    <li><a href="references.html" class="nav-link">References</a></li>
+                    <li><a href="author_introduction.html" class="nav-link">Author Introduction</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Documentation</a>
+                <ul class="dropdown">
+                    <li><a href="../documentation/experimental_protocols.html" class="nav-link">Experimental Protocols</a></li>
+                    <li><a href="../documentation/lab_notebook.html" class="nav-link">Lab Notebook</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 主内容区域 -->
+<div class="content-wrap">
+    <section class="wiki-module">
+        <h2 class="module-heading">Abstract</h2>
+        <div class="content">
+            This study investigates the synthesis and catalytic properties of novel transition metal oxide nanocomposites for sustainable organic synthesis. The research focuses on developing eco-friendly catalytic systems that eliminate the need for toxic solvents and reduce reaction temperatures while maintaining high yields.
+
+            <p>Through a combination of sol-gel and hydrothermal synthesis methods, we successfully prepared a series of mixed metal oxide catalysts with controlled particle sizes (5-20 nm) and high surface areas (>150 m²/g). Catalytic activity was evaluated using model coupling reactions, demonstrating up to 98% conversion efficiency with excellent selectivity (>95%) under mild reaction conditions.</p>
+
+            <p>Structural characterization via X-ray diffraction (XRD), transmission electron microscopy (TEM), and X-ray photoelectron spectroscopy (XPS) confirmed the formation of well-defined crystalline phases and homogeneous element distribution. The catalysts showed remarkable stability over five consecutive reaction cycles without significant loss of activity.</p>
+
+            <p>These findings contribute to the development of sustainable chemical processes by providing efficient, recyclable catalytic systems that minimize environmental impact while maintaining industrial relevance.</p>
+        </div>
+    </section>
+</div>
+
+<script>
+    // 导航栏激活状态设置
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
+</body>
+</html>

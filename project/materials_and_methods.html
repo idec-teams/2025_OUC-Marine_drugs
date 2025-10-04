@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materials & Methods - Chemical Research Wiki</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<!-- 头部和导航栏结构省略（与其他页面一致） -->
+<header>
+    <div class="header-wrap">
+        <h1 class="wiki-main-title">Chemical Material Research Wiki</h1>
+        <p class="wiki-subtitle">Functional Chemical Experiment Documentation</p>
+    </div>
+</header>
+
+<nav>
+    <div class="nav-wrap">
+        <ul class="main-nav">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Project</a>
+                <ul class="dropdown">
+                    <li><a href="abstract.html" class="nav-link">Abstract</a></li>
+                    <li><a href="introduction.html" class="nav-link">Introduction</a></li>
+                    <li><a href="results.html" class="nav-link">Results</a></li>
+                    <li><a href="materials_and_methods.html" class="nav-link active">Materials & Methods</a></li>
+                    <li><a href="conclusion.html" class="nav-link">Conclusion</a></li>
+                    <li><a href="references.html" class="nav-link">References</a></li>
+                    <li><a href="author_introduction.html" class="nav-link">Author Introduction</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Documentation</a>
+                <ul class="dropdown">
+                    <li><a href="../documentation/experimental_protocols.html" class="nav-link">Experimental Protocols</a></li>
+                    <li><a href="../documentation/lab_notebook.html" class="nav-link">Lab Notebook</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="content-wrap">
+    <section class="wiki-module">
+        <h2 class="module-heading">Materials and Methods</h2>
+        <div class="content">
+            <h3>1. Materials</h3>
+            <p>All chemicals were used as received without further purification:</p>
+            <ul>
+                <li>Cobalt(II) nitrate hexahydrate (Co(NO₃)₂·6H₂O, ≥98%, Sigma-Aldrich)</li>
+                <li>Zinc nitrate hexahydrate (Zn(NO₃)₂·6H₂O, ≥98%, Sigma-Aldrich)</li>
+                <li>Sodium hydroxide (NaOH, ≥98%, Merck)</li>
+                <li>Ethylene glycol (C₂H₆O₂, ≥99%, Merck)</li>
+                <li>Phenylboronic acid (C₆H₇BO₂, ≥95%, Sigma-Aldrich)</li>
+                <li>Bromobenzene (C₆H₅Br, ≥99%, Sigma-Aldrich)</li>
+                <li>Ethanol (C₂H₅OH, ≥99.5%, Merck)</li>
+                <li>Deionized water (18.2 MΩ·cm, prepared in-house)</li>
+            </ul>
+
+            <h3>2. Synthesis of Co₃O₄-ZnO Nanocomposites</h3>
+            <p>In a typical synthesis:</p>
+            <ol>
+                <li>1.0 mmol Co(NO₃)₂·6H₂O and 1.0 mmol Zn(NO₃)₂·6H₂O were dissolved in 30 mL ethylene glycol under magnetic stirring.</li>
+                <li>A solution of 8.0 mmol NaOH in 10 mL ethylene glycol was added dropwise to the above solution, resulting in a purple precipitate.</li>
+                <li>The mixture was transferred to a 50 mL Teflon-lined stainless-steel autoclave and heated at 160°C for 12 hours.</li>
+                <li>After cooling to room temperature, the precipitate was centrifuged, washed with deionized water and ethanol three times each.</li>
+                <li>The product was dried at 60°C overnight and calcined at 400°C for 2 hours in air with a heating rate of 2°C/min.</li>
+            </ol>
+
+            <h3>3. Characterization Techniques</h3>
+            <ul>
+                <li>X-ray diffraction (XRD) patterns were recorded on a Bruker D8 Advance diffractometer using Cu Kα radiation (λ = 1.5418 Å) in the 2θ range of 20-80°.</li>
+                <li>Transmission electron microscopy (TEM) images were obtained using a JEOL JEM-2100 microscope operating at 200 kV.</li>
+                <li>Nitrogen adsorption-desorption isotherms were measured at 77 K using a Micromeritics ASAP 2020 analyzer.</li>
+                <li>X-ray photoelectron spectroscopy (XPS) was performed on a Thermo Scientific ESCALAB 250Xi spectrometer with Al Kα radiation.</li>
+            </ul>
+
+            <h3>4. Catalytic Activity Tests</h3>
+            <p>The Suzuki-Miyaura cross-coupling reaction was carried out in a 25 mL round-bottom flask equipped with a magnetic stirrer. Typically, phenylboronic acid (1.0 mmol), bromobenzene (0.5 mmol), NaOH (2.0 mmol), catalyst (0.5 mol%), ethanol (5 mL), and water (1 mL) were added to the flask. The reaction mixture was stirred at 25°C for 2 hours. The products were analyzed using a Shimadzu GC-2014 gas chromatograph equipped with a flame ionization detector (FID) and a DB-5 capillary column.</p>
+        </div>
+    </section>
+</div>
+
+<script>
+    // 导航栏激活状态设置
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
+</body>
+</html>

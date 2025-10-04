@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemical Research Wiki</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- 头部区域 -->
+<header>
+    <div class="header-wrap">
+        <h1 class="wiki-main-title">Chemical Material Research Wiki</h1>
+        <p class="wiki-subtitle">Functional Chemical Experiment Documentation</p>
+    </div>
+</header>
+
+<!-- 导航栏 -->
+<nav>
+    <div class="nav-wrap">
+        <ul class="main-nav">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Project</a>
+                <ul class="dropdown">
+                    <li><a href="project/abstract.html" class="nav-link">Abstract</a></li>
+                    <li><a href="project/introduction.html" class="nav-link">Introduction</a></li>
+                    <li><a href="project/results.html" class="nav-link">Results</a></li>
+                    <li><a href="project/materials_and_methods.html" class="nav-link">Materials & Methods</a></li>
+                    <li><a href="project/conclusion.html" class="nav-link">Conclusion</a></li>
+                    <li><a href="project/references.html" class="nav-link">References</a></li>
+                    <li><a href="project/author_introduction.html" class="nav-link">Author Introduction</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                <a href="#" class="nav-link">Documentation</a>
+                <ul class="dropdown">
+                    <li><a href="documentation/experimental_protocols.html" class="nav-link">Experimental Protocols</a></li>
+                    <li><a href="documentation/lab_notebook.html" class="nav-link">Lab Notebook</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 主内容区域 -->
+<div class="content-wrap">
+    <section class="home-module">
+        <div class="home-icon">🔬</div>
+        <div class="home-desc">
+            Welcome to the Chemical Material Research Wiki. This platform contains comprehensive documentation of our research project on functional chemical materials, including experimental protocols, research findings, and detailed methodologies. Explore the sections below to access specific research components.
+        </div>
+        <div class="home-btns">
+            <a href="project/abstract.html" class="home-btn">View Project Abstract</a>
+            <a href="documentation/experimental_protocols.html" class="home-btn">Browse Experimental Protocols</a>
+            <a href="project/results.html" class="home-btn">查看研究结果</a>
+        </div>
+    </section>
+</div>
+
+<script>
+    // 导航栏激活状态设置
+    const currentPath = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+</script>
+</body>
+</html>

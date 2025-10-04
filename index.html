@@ -15,6 +15,14 @@
     </div>
 </header>
 
+<div class="scroll-sidebar scroll-left">
+    <img src="img/sidebar/side1.jpg" alt="左侧图1" class="scroll-img">
+</div>
+
+<!-- 右侧跟随图片 -->
+<div class="scroll-sidebar scroll-right">
+    <img src="img/sidebar/side1.jpg" alt="右侧图1" class="scroll-img">
+</div>
 <!-- 导航栏 -->
 <nav>
     <div class="nav-wrap">
@@ -77,6 +85,15 @@
         if (linkPath === currentPath) {
             link.classList.add('active');
         }
+    });
+    // 保留之前的滚动跟随逻辑（如果需要）
+    const sidebars = document.querySelectorAll('.scroll-sidebar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        sidebars.forEach(sidebar => {
+            const targetTop = 150 + scrollTop * 0.25;
+            sidebar.style.top = `${targetTop}px`;
+        });
     });
 </script>
 </body>

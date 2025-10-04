@@ -15,6 +15,14 @@
     </div>
 </header>
 
+<div class="scroll-sidebar scroll-left">
+    <img src="../img/sidebar/side1.jpg" alt="左侧图1" class="scroll-img">
+</div>
+
+<!-- 右侧跟随图片 -->
+<div class="scroll-sidebar scroll-right">
+    <img src="../img/sidebar/side1.jpg" alt="右侧图1" class="scroll-img">
+</div>
 <nav>
     <div class="nav-wrap">
         <ul class="main-nav">
@@ -83,6 +91,19 @@
         if (linkPath === currentPath) {
             link.classList.add('active');
         }
+    });
+
+    // 在sidebar-scroll.js中修改
+    document.addEventListener('DOMContentLoaded', () => {
+        const sidebars = document.querySelectorAll('.scroll-sidebar');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            sidebars.forEach(sidebar => {
+                // 降低比例（从0.3→0.25），图片越大，移动速度宜稍慢
+                const targetTop = 150 + scrollTop * 0.25;
+                sidebar.style.top = `${targetTop}px`;
+            });
+        });
     });
 </script>
 </body>

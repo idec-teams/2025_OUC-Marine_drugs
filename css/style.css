@@ -265,3 +265,77 @@ nav {
         font-size: 3.5rem;
     }
 }
+
+/* 滚动跟随容器 - 增大尺寸并靠近中间内容 */
+.scroll-sidebar {
+    position: sticky;
+    top: 15vh; /* 距离顶部更近，视觉上更居中 */
+    width: 220px; /* 增大宽度（比原来宽60px） */
+    height: fit-content;
+    z-index: 50;
+}
+
+/* 左侧容器 - 减少与中间内容的距离 */
+.scroll-left {
+    float: left;
+    margin-left: 120px; /* 移除左侧外距，更靠近中间 */
+    padding-right: 5px; /* 与内容区保留少量间距，避免紧贴 */
+}
+
+/* 右侧容器 - 减少与中间内容的距离 */
+.scroll-right {
+    float: right;
+    margin-right: 120px; /* 移除右侧外距，更靠近中间 */
+    padding-left: 5px; /* 与内容区保留少量间距 */
+}
+
+/* 图片样式 - 增大显示面积并优化细节 */
+.scroll-img {
+    width: 100%; /* 图片宽度充满容器（因容器加宽，图片自然变大） */
+    height: auto;
+    border-radius: 10px; /* 稍大圆角更协调 */
+    box-shadow: 0 6px 18px rgba(10, 122, 202, 0.2); /* 增强阴影立体感 */
+    opacity: 0.9; /* 提高透明度，避免过暗 */
+    transition: all 0.3s ease;
+    /* 添加轻微边框增强科技感 */
+    border: 1px solid rgba(61, 220, 132, 0.3);
+}
+
+/* 图片间距调整 - 保持错落感同时更紧凑 */
+.scroll-left .scroll-img:first-child {
+    margin-bottom: 20px; /* 减少间距，避免过于松散 */
+}
+.scroll-right .scroll-img:first-child {
+    margin-bottom: 40px;
+}
+
+/* 中间内容区 - 适配图片靠近后的布局 */
+.content-wrap {
+    max-width: 800px; /* 适当缩小内容区宽度，让图片更靠近 */
+    margin: 3rem auto;
+    padding: 0 20px;
+    /* 关键：让内容区在左右图片之间居中，不被浮动元素挤压 */
+    overflow: hidden;
+}
+
+/* 响应式调整 - 确保中等屏幕仍能显示完整 */
+@media (max-width: 1200px) {
+    .scroll-sidebar {
+        width: 180px; /* 中等屏幕适当缩小 */
+    }
+    .content-wrap {
+        max-width: 650px;
+    }
+}
+
+/* 小屏幕依然隐藏，优先内容 */
+@media (max-width: 992px) {
+    .scroll-sidebar {
+        display: none;
+    }
+    .content-wrap {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+
+}

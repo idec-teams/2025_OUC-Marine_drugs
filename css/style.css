@@ -114,15 +114,20 @@ nav {
     box-shadow: var(--shadow);
     list-style: none;
     min-width: 200px;
-    padding: 0.5rem 0;
-    margin-top: 0.5rem;
     display: none;
     z-index: 1000; /* 增加z-index确保下拉菜单在最上层 */
+    margin-top: 0; /* 将原有的0.5rem调整为0，避免菜单与父项之间出现间隙 */
+    padding-top: 0.5rem;
 }
 
 /* 新增hover状态保持显示 */
 .has-dropdown:hover .dropdown {
     display: block;
+}
+
+/* 为父项链接增加底部内边距，扩大hover触发区域 */
+.has-dropdown > .nav-link {
+    padding-bottom: 1.2rem;
 }
 
 /* 确保下拉菜单项hover时不关闭菜单 */
@@ -136,8 +141,8 @@ nav {
 
 .dropdown .nav-link {
     width: 100%;
-    padding: 0.5rem 1rem;
     border-radius: 4px;
+    padding: 0.7rem 1rem; /* 增加内边距，扩大点击区域 */
 }
 
 .has-dropdown:hover .dropdown {

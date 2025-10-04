@@ -15,14 +15,26 @@
   </div>
 </header>
 
+<!-- 左侧图片容器（同一位置放两张图） -->
 <div class="scroll-sidebar scroll-left">
-  <img src="../img/sidebar/side1.jpg" alt="左侧图1" class="scroll-img">
+  <div class="img-container">
+    <!-- 默认显示的图 -->
+    <img src="../img/sidebar/side1.jpg" alt="左侧默认图" class="base-img">
+    <!-- 悬停时显示的图（初始隐藏） -->
+    <img src="../img/sidebar/side2.jpg" alt="左侧悬停图" class="hover-img">
+  </div>
+
 </div>
 
-<!-- 右侧跟随图片 -->
+<!-- 右侧图片容器（同一位置放两张图） -->
 <div class="scroll-sidebar scroll-right">
-  <img src="../img/sidebar/side1.jpg" alt="右侧图1" class="scroll-img">
+  <div class="img-container">
+    <img src="../img/sidebar/side1.jpg" alt="右侧默认图" class="base-img">
+    <img src="../img/sidebar/side2.jpg" alt="右侧悬停图" class="hover-img">
+  </div>
+
 </div>
+
 <nav>
   <div class="nav-wrap">
     <ul class="main-nav">

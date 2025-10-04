@@ -15,40 +15,24 @@
     </div>
 </header>
 
-<!-- 左侧图片（默认图+悬停图） -->
+<!-- 左侧图片容器（同一位置放两张图） -->
 <div class="scroll-sidebar scroll-left">
-    <!-- 第一张图：默认显示left1，悬停切换为left1-hover -->
-    <img
-            src="../img/sidebar/side1.jpg"
-            data-hover="images/sidebar/left1-hover.png"
-            alt="左侧图1"
-            class="scroll-img"
-    >
-    <!-- 第二张图：默认显示left2，悬停切换为left2-hover -->
-    <img
-            src="../img/sidebar/side2.jpg"
-            data-hover="images/sidebar/left2-hover.png"
-            alt="左侧图2"
-            class="scroll-img"
-    >
+    <div class="img-container">
+        <!-- 默认显示的图 -->
+        <img src="../img/sidebar/side1.jpg" alt="左侧默认图" class="base-img">
+        <!-- 悬停时显示的图（初始隐藏） -->
+        <img src="../img/sidebar/side2.jpg" alt="左侧悬停图" class="hover-img">
+    </div>
+
 </div>
 
-<!-- 右侧图片（默认图+悬停图） -->
+<!-- 右侧图片容器（同一位置放两张图） -->
 <div class="scroll-sidebar scroll-right">
-    <!-- 第一张图：默认显示right1，悬停切换为right1-hover -->
-    <img
-            src="../img/sidebar/side1.jpg"
-            data-hover="images/sidebar/right1-hover.png"
-            alt="右侧图1"
-            class="scroll-img"
-    >
-    <!-- 第二张图：默认显示right2，悬停切换为right2-hover -->
-    <img
-            src="../img/sidebar/side2.jpg"
-            data-hover="images/sidebar/right2-hover.png"
-            alt="右侧图2"
-            class="scroll-img"
-    >
+    <div class="img-container">
+        <img src="../img/sidebar/side1.jpg" alt="右侧默认图" class="base-img">
+        <img src="../img/sidebar/side2.jpg" alt="右侧悬停图" class="hover-img">
+    </div>
+
 </div>
 
 <!-- 导航栏 -->
@@ -112,39 +96,18 @@
         }
     });
     document.addEventListener('DOMContentLoaded', () => {
-        // 获取所有侧边图片
-        const sidebarImages = document.querySelectorAll('.scroll-img');
-
-        // 遍历图片，添加鼠标事件
-        sidebarImages.forEach(img => {
-            // 保存原始图片路径（用于鼠标离开时恢复）
-            const originalSrc = img.src;
-
-            // 鼠标悬停时：切换为data-hover指定的图片
-            img.addEventListener('mouseenter', () => {
-                // 获取hover图路径（从data-hover属性）
-                const hoverSrc = img.getAttribute('data-hover');
-                if (hoverSrc) {
-                    img.src = hoverSrc;
-                    // 可选：添加过渡动画（需配合CSS）
-                    img.style.opacity = '0.8';
-                }
-            });
-
-            // 鼠标离开时：恢复原始图片
-            img.addEventListener('mouseleave', () => {
-                img.src = originalSrc;
-                // 恢复样式
-                img.style.opacity = '0.2'; // 与默认透明度一致
-            });
-        });
-
-        // 保留之前的滚动跟随逻辑（如果需要）
+        // 获取所有侧边容器
         const sidebars = document.querySelectorAll('.scroll-sidebar');
+
+        // 监听滚动事件
         window.addEventListener('scroll', () => {
+            // 获取当前滚动距离
             const scrollTop = window.scrollY;
+
+            // 为每个侧边容器设置动态位置（轻微延迟跟随，更自然）
             sidebars.forEach(sidebar => {
-                const targetTop = 150 + scrollTop * 0.25;
+                // 计算目标位置：初始top值 + 滚动距离的30%（调整比例可改变跟随速度）
+                const targetTop = 200 + scrollTop * 0.3;
                 sidebar.style.top = `${targetTop}px`;
             });
         });

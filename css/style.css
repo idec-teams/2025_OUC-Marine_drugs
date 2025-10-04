@@ -104,20 +104,19 @@ nav {
     color: white;
 }
 
-/* 下拉菜单样式 */
+/* 确保下拉菜单与父项完全衔接，无间隙 */
 .dropdown {
-    position: absolute;
-    top: 100%;
+    position: absolute; /* 关键：使用绝对定位贴合父项 */
+    top: 100%; /* 顶部与父项底部完全对齐 */
     left: 0;
-    background: white;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    list-style: none;
-    min-width: 200px;
-    display: none;
-    z-index: 1000; /* 增加z-index确保下拉菜单在最上层 */
-    margin-top: 0; /* 将原有的0.5rem调整为0，避免菜单与父项之间出现间隙 */
-    padding-top: 0.5rem;
+    margin: 0; /* 彻底消除默认外边距 */
+    padding: 0.5rem 0; /* 仅内部留白 */
+    min-width: 200px; /* 确保子菜单宽度足够 */
+    z-index: 1000; /* 保证在其他内容上方 */
+    opacity: 0; /* 初始隐藏 */
+    visibility: hidden; /* 隐藏且不占空间 */
+    transform: translateY(5px); /* 轻微下移，为动画做准备 */
+    transition: all 0.2s ease; /* 平滑过渡 */
 }
 
 /* 新增hover状态保持显示 */

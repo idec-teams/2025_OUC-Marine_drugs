@@ -226,11 +226,32 @@ nav {
     font-size: 1.4rem;
 }
 
+/* 正文内容放大与可读性优化 */
 .content {
-    font-size: 1.05rem;
-    color: #475569;
-    line-height: 1.8;
-    text-align: justify;
+    font-size: 1.25rem; /* 正文字号放大（默认1rem→1.25rem） */
+    line-height: 1.8; /* 行高增加，避免文字拥挤 */
+    color: #1a202c; /* 稍深颜色，提升阅读对比度 */
+}
+
+/* 内容区容器放大并增加留白 */
+.content-wrap {
+    max-width: 1050px; /* 宽度增加，容纳放大内容 */
+    margin: 4rem auto; /* 上下间距增大，提升呼吸感 */
+    padding: 2rem 40px; /* 内边距增加，避免内容贴边 */
+    position: relative;
+    z-index: 20;
+}
+
+.data-card {
+    padding: 1.8rem; /* 卡片内边距增加 */
+    margin: 2rem 0; /* 卡片上下间距加大 */
+    font-size: 1.2rem;
+}
+
+/* 内容区图片适配 */
+.content img, .chem-image-container {
+    max-width: 100%; /* 确保图片不超出内容区 */
+    margin: 2.5rem auto; /* 图片上下居中且间距加大 */
 }
 
 .content h3 {
@@ -238,8 +259,9 @@ nav {
     margin: 1.5rem 0 1rem;
 }
 
+/* 段落与子标题间距调整 */
 .content p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.8rem; /* 段落间距加大 */
 }
 
 .content ul, .content ol {
@@ -278,7 +300,7 @@ nav {
 /* 左侧容器 - 减少与中间内容的距离 */
 .scroll-left {
     float: left;
-    margin-left: 120px; /* 移除左侧外距，更靠近中间 */
+    margin-left: 60px; /* 移除左侧外距，更靠近中间 */
     padding-right: 5px; /* 与内容区保留少量间距，避免紧贴 */
 }
 
@@ -341,14 +363,6 @@ nav {
 .img-container:hover .hover-img {
     opacity: 0.8; /* 显示hover图（更高透明度突出） */
 }
-/* 内容区样式保持不变 */
-.content-wrap {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 20;
-}
 
 /* 响应式调整 - 确保中等屏幕仍能显示完整 */
 @media (max-width: 1200px) {
@@ -369,5 +383,12 @@ nav {
         max-width: 100%;
         padding: 0 30px;
     }
-
+    @media (max-width: 768px) {
+        .module-heading {
+            font-size: 1.9rem;
+        }
+        .content, .content ul, .data-card {
+            font-size: 1.05rem;
+        }
+    }
 }

@@ -383,12 +383,73 @@ nav {
         max-width: 100%;
         padding: 0 30px;
     }
-    @media (max-width: 768px) {
-        .module-heading {
-            font-size: 1.9rem;
-        }
-        .content, .content ul, .data-card {
-            font-size: 1.05rem;
-        }
+}
+
+@media (max-width: 768px) {
+    .module-heading {
+        font-size: 1.9rem;
+    }
+    .content, .content ul, .data-card {
+        font-size: 1.05rem;
+    }
+}
+
+/* 版权栏核心样式 */
+.copyright-bar {
+    /* 匹配头部深色背景，统一视觉 */
+    background-color: var(--dark-base);
+    color: white; /* 基础文字白色 */
+    padding: 2.5rem 0; /* 上下内边距，避免内容拥挤 */
+    margin-top: 3rem; /* 与上方内容区拉开距离 */
+}
+
+/* 版权栏容器（与导航/内容区宽度一致，居中显示） */
+.copyright-wrap {
+    max-width: 1200px; /* 复用导航栏的最大宽度，保持页面对齐 */
+    margin: 0 auto; /* 水平居中 */
+    padding: 0 1.2rem; /* 移动端左右留白，避免贴边 */
+    text-align: center; /* 文字整体居中 */
+}
+
+/* 项目名称（突出显示，用荧光蓝强调） */
+.project-name {
+    font-size: 1.8rem; /* 字号放大，突出标题 */
+    color: var(--chem-cyan); /* 化学荧光蓝，呼应风格 */
+    font-weight: 600;
+    letter-spacing: 1px; /* 字母间距，增强科技感 */
+    margin-bottom: 1rem; /* 与下方信息拉开距离 */
+}
+
+/* 机构与联系方式（辅助信息，低透明度避免抢戏） */
+.contact-info {
+    font-size: 1rem;
+    opacity: 0.8; /* 文字浅化，突出重点 */
+    margin-bottom: 1.2rem; /* 与版权声明间距 */
+    display: flex; /* 桌面端一行排列 */
+    flex-wrap: wrap; /* 移动端自动换行 */
+    justify-content: center; /* 换行后仍居中 */
+    gap: 0.8rem 1.5rem; /* 元素间距：上下0.8rem，左右1.5rem */
+}
+
+/* 分隔符（弱化处理，避免生硬） */
+.separator {
+    color: var(--tech-blue); /* 用科技蓝做分隔，细节呼应 */
+    opacity: 0.6;
+}
+
+/* 版权声明（最底部小字，进一步弱化） */
+.copyright-statement {
+    font-size: 0.9rem;
+    opacity: 0.7; /* 比辅助信息更浅 */
+    color: #f8fafc; /* 复用浅色背景色，避免纯白刺眼 */
+}
+
+/* 响应式适配（移动端优化） */
+@media (max-width: 768px) {
+    .project-name {
+        font-size: 1.5rem; /* 移动端缩小标题字号 */
+    }
+    .contact-info {
+        font-size: 0.9rem; /* 辅助信息字号缩小 */
     }
 }

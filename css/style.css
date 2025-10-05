@@ -453,3 +453,95 @@ nav {
         font-size: 0.9rem; /* 辅助信息字号缩小 */
     }
 }
+
+/* 团队成员板块整体样式 */
+.team-members-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+/* 板块标题样式 */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+/* 切换按钮位置调整 */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%; /* 垂直居中 */
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--tech-blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10; /* 确保按钮在卡片上方 */
+}
+
+/* 左切换按钮位置 */
+.prev-btn {
+    left: -20px; /* 稍微超出容器左侧 */
+}
+
+/* 右切换按钮位置 */
+.next-btn {
+    right: -20px; /* 稍微超出容器右侧 */
+}
+
+/* 为团队成员区域添加相对定位 */
+.team-members-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+/* 成员容器样式，设置相对定位用于按钮定位，以及溢出隐藏、弹性布局等 */
+.members-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px; /* 根据实际需求调整高度 */
+    margin: 0 auto; /* 确保容器居中 */
+    max-width: 1000px; /* 限制最大宽度 */
+}
+/* 成员卡片样式 */
+.member-card {
+    position: absolute; /* 使用绝对定位而非flex */
+    width: 80%; /* 固定宽度百分比 */
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0; /* 默认隐藏 */
+}
+/* 成员图片样式 */
+.member-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+/* 成员姓名样式 */
+.member-name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+/* 成员角色样式 */
+.member-role {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #666;
+}
+/* 成员简介样式 */
+.member-bio {
+    line-height: 1.6;
+    text-align: left;
+}

@@ -5,14 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Members - Chemical Research Wiki</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        /* 成员展示区样式 */
+        .member-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        /* 人物图片容器 */
+        .member-image-wrap {
+            width: 80%;
+            max-width: 500px;
+            height: 400px; /* 固定高度，确保切换时不跳动 */
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(10, 122, 202, 0.15);
+        }
+
+        .member-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持比例填充容器 */
+            transition: opacity 0.5s ease;
+        }
+
+        /* 切换按钮样式 */
+        .nav-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        /* 人物介绍样式 */
+        .member-info {
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .member-name {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .member-bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        /* 指示器（显示当前是第几张） */
+        .image-indicators {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+    </style>
 </head>
 <body>
-<header>
-    <div class="header-wrap">
-        <h1 class="wiki-main-title">Semi-rational directed evolution of a Deepsea－derived P450<sub>S18</sub> for Phenazines Construction</h1>
-        <p class="wiki-subtitle">Functional Chemical Experiment Documentation</p>
-    </div>
-</header>
 
 <!-- 左侧图片容器（同一位置放两张图） -->
 <div class="scroll-sidebar scroll-left">
@@ -25,10 +115,17 @@
 </div>
 
 
+
+<header>
+    <div class="header-wrap">
+        <h1 class="wiki-main-title">Chemical Material Research Wiki</h1>
+        <p class="wiki-subtitle">Functional Chemical Experiment Documentation</p>
+    </div>
+</header>
+
 <nav>
     <div class="nav-wrap">
         <ul class="main-nav">
-            <!-- 导航栏内容与contribution.html相同 -->
             <li><a href="../../index.html" class="nav-link">Home</a></li>
 
             <li class="has-dropdown">
@@ -40,6 +137,7 @@
                     <li><a href="../materials_and_methods.html" class="nav-link">Materials & Methods</a></li>
                     <li><a href="../conclusion.html" class="nav-link">Conclusion</a></li>
                     <li><a href="../references.html" class="nav-link">References</a></li>
+
                 </ul>
             </li>
 
@@ -47,7 +145,7 @@
                 <a href="#" class="nav-link">Documentation</a>
                 <ul class="dropdown">
                     <li><a href="../../documentation/experimental_protocols.html" class="nav-link">Experimental Protocols</a></li>
-                    <li><a href="../../documentation/iDEC-Supporting Information-20250924-xf.pdf" class="nav-link">Lab Notebook</a></li>
+                    <li><a href="../../documentation/iDEC-Supporting Information-20250924-xf.pdf" class="nav-link" target="_blank">Lab Notebook</a></li>
                 </ul>
             </li>
 
@@ -64,46 +162,140 @@
 
 <div class="content-wrap">
     <section class="wiki-module">
-        <h2 class="module-heading">Author Introduction</h2>
-        <div class="content">
-            <h3>Dr. Li Wei</h3>
-            <p>Principal Investigator | Professor of Materials Chemistry</p>
-            <p>Dr. Li Wei is a Professor of Materials Chemistry at the Institute of Advanced Materials, University of Science and Technology. Her research focuses on the design, synthesis, and application of functional nanomaterials for catalytic and energy-related applications. She has published over 80 peer-reviewed articles in journals such as <em>Advanced Materials</em>, <em>ACS Catalysis</em>, and <em>Green Chemistry</em>. Dr. Li received her Ph.D. in Chemistry from Tsinghua University and completed postdoctoral research at MIT.</p>
+        <h2 class="module-heading">Team Members</h2>
 
-            <h3>Zhang Ming</h3>
-            <p>Ph.D. Candidate</p>
-            <p>Zhang Ming is a third-year Ph.D. candidate in the Department of Chemistry. His research interests include the synthesis of transition metal oxide nanocomposites and their applications in sustainable organic synthesis. This work forms part of his doctoral dissertation. He received his B.S. in Applied Chemistry from Nanjing University.</p>
+        <div class="member-container">
+            <!-- 人物图片区域 -->
+            <div class="member-image-wrap">
+                <img id="current-image" class="member-image" src="../../img/members/liwenli.png" alt="Team Member">
 
-            <h3>Wang Jia</h3>
-            <p>Research Assistant</p>
-            <p>Wang Jia is a Research Assistant in the Materials Chemistry Laboratory. She specializes in materials characterization using X-ray diffraction, electron microscopy, and surface analysis techniques. She received her M.S. in Materials Science from Shanghai Jiao Tong University.</p>
+                <!-- 切换按钮 -->
+                <div class="nav-buttons">
+                    <button id="prev-btn" class="nav-btn">←</button>
+                    <button id="next-btn" class="nav-btn">→</button>
+                </div>
+            </div>
 
-            <h3>Chen Xiao</h3>
-            <p>Undergraduate Research Intern</p>
-            <p>Chen Xiao is an undergraduate student majoring in Chemistry. She joined the research group in 2023 and has been involved in catalyst synthesis and preliminary activity testing. She is currently pursuing her B.S. degree at the University of Science and Technology.</p>
+            <!-- 指示器 -->
+            <div class="image-indicators" id="indicators">
+                <!-- 由JS动态生成 -->
+            </div>
+
+            <!-- 人物介绍区域 -->
+            <div class="member-info">
+                <h3 id="member-name" class="member-name">Dr. Li Wei</h3>
+                <p id="member-role" class="member-role">Principal Investigator</p>
+                <div id="member-bio" class="member-bio">
+                    <p>Dr. Li Wei is a Professor of Materials Chemistry at the Institute of Advanced Materials, University of Science and Technology. With over 15 years of research experience in functional materials, his work focuses on the synthesis and application of novel catalysts for environmental remediation.</p>
+                    <p>He has published more than 80 peer-reviewed papers in journals such as Nature Materials and ACS Nano, and holds 12 patents related to catalytic material design. Dr. Li leads a research team of 15 members, including postdocs, PhD students, and research assistants.</p>
+                </div>
+            </div>
         </div>
     </section>
 </div>
 
 <script>
-    const currentPath = window.location.pathname.split('/').pop();
-    document.querySelectorAll('.nav-link').forEach(link => {
-        const linkPath = link.getAttribute('href').split('/').pop();
-        if (linkPath === currentPath) {
-            link.classList.add('active');
+    // 成员数据（可根据实际情况扩展）
+    const members = [
+        {
+            name: "Dr. Li Wei",
+            role: "Principal Investigator",
+            bio: `<p>Dr. Li Wei is a Professor of Materials Chemistry at the Institute of Advanced Materials, University of Science and Technology. With over 15 years of research experience in functional materials, his work focuses on the synthesis and application of novel catalysts for environmental remediation.</p>
+              <p>He has published more than 80 peer-reviewed papers in journals such as Nature Materials and ACS Nano, and holds 12 patents related to catalytic material design. Dr. Li leads a research team of 15 members, including postdocs, PhD students, and research assistants.</p>`,
+            image: "../../img/members/liwenli.png"
+        },
+        {
+            name: "Zhang Ming",
+            role: "Ph.D. Candidate",
+            bio: `<p>Zhang Ming is a fifth-year PhD candidate in the Department of Chemistry. His research focuses on the development of photocatalytic materials for hydrogen production from water splitting.</p>
+              <p>He received his Bachelor's degree in Chemical Engineering from Tsinghua University in 2018. During his PhD studies, he has published 12 papers as first author and has presented his work at 5 international conferences.</p>`,
+            image: "../../images/members/member2.jpg"
+        },
+        {
+            name: "Wang Hong",
+            role: "Research Assistant",
+            bio: `<p>Wang Hong joined the research team in 2020 as a Research Assistant. She is responsible for laboratory management and experimental validation of new catalyst formulations.</p>
+              <p>She holds a Master's degree in Applied Chemistry from Shanghai Jiao Tong University. Her expertise includes material characterization techniques such as XRD, SEM, and XPS.</p>`,
+            image: "../../images/members/member3.jpg"
+        },
+        {
+            name: "Chen Jie",
+            role: "Undergraduate Research Intern",
+            bio: `<p>Chen Jie is a senior undergraduate student majoring in Chemistry at the University of Science and Technology. He joined the team in 2023 through the Undergraduate Research Program.</p>
+              <p>His current work involves assisting with catalyst synthesis and preliminary activity testing. Chen plans to pursue a PhD in Materials Science starting next year.</p>`,
+            image: "../../images/members/member4.jpg"
         }
-    });
+    ];
 
-    // 在sidebar-scroll.js中修改
-    document.addEventListener('DOMContentLoaded', () => {
-        const sidebars = document.querySelectorAll('.scroll-sidebar');
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            sidebars.forEach(sidebar => {
-                // 降低比例（从0.3→0.25），图片越大，移动速度宜稍慢
-                const targetTop = 150 + scrollTop * 0.25;
-                sidebar.style.top = `${targetTop}px`;
-            });
+    // 当前显示的成员索引
+    let currentIndex = 0;
+
+    // DOM元素
+    const imageElement = document.getElementById('current-image');
+    const nameElement = document.getElementById('member-name');
+    const roleElement = document.getElementById('member-role');
+    const bioElement = document.getElementById('member-bio');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const indicatorsContainer = document.getElementById('indicators');
+
+    // 初始化指示器
+    function initIndicators() {
+        members.forEach((_, index) => {
+            const indicator = document.createElement('div');
+            indicator.className = `indicator ${index === currentIndex ? 'active' : ''}`;
+            indicator.addEventListener('click', () => goToIndex(index));
+            indicatorsContainer.appendChild(indicator);
+        });
+    }
+
+    // 更新显示内容
+    function updateDisplay() {
+        const member = members[currentIndex];
+        imageElement.src = member.image;
+        nameElement.textContent = member.name;
+        roleElement.textContent = member.role;
+        bioElement.innerHTML = member.bio;
+
+        // 更新指示器状态
+        document.querySelectorAll('.indicator').forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    // 切换到上一个成员
+    function prevMember() {
+        currentIndex = (currentIndex - 1 + members.length) % members.length;
+        updateDisplay();
+    }
+
+    // 切换到下一个成员
+    function nextMember() {
+        currentIndex = (currentIndex + 1) % members.length;
+        updateDisplay();
+    }
+
+    // 直接跳转到指定索引
+    function goToIndex(index) {
+        currentIndex = index;
+        updateDisplay();
+    }
+
+    // 绑定事件
+    prevBtn.addEventListener('click', prevMember);
+    nextBtn.addEventListener('click', nextMember);
+
+    // 初始化页面
+    initIndicators();
+    updateDisplay();
+
+    // 保留滚动跟随效果（如果需要）
+    const sidebars = document.querySelectorAll('.scroll-sidebar');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        sidebars.forEach(sidebar => {
+            const targetTop = 150 + scrollTop * 0.25;
+            sidebar.style.top = `${targetTop}px`;
         });
     });
 </script>
